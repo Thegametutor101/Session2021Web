@@ -20,12 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/css/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/css/palette.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/img/logo département informatique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/css/header.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611240372007</updated>
       <workItem from="1611240373079" duration="222000" />
-      <workItem from="1611325055294" duration="16362000" />
+      <workItem from="1611325055294" duration="17985000" />
     </task>
     <servers />
   </component>
