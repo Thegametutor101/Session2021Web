@@ -1,13 +1,8 @@
 <?php
 
-namespace AppBundle\Management\DB;
-
-use PDO;
-use PDOException;
-
 class Connection
 {
-    private PDO $connection;
+    private $connection;
     public function __construct()
     {
         try {

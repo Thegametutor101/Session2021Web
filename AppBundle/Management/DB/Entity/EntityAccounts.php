@@ -1,15 +1,9 @@
 <?php
-
-namespace AppBundle\Management\DB\Entity;
-
-use AppBundle\Management\DB\Connection;
-use PDO;
-use PDOException;
+require_once (__DIR__ . '/../Connection.php');
 
 class EntityAccounts
 {
-    private string $username, $password;
-    private PDO $connection;
+    private $connection;
 
     /**
      * EntityAccounts constructor.
@@ -21,55 +15,43 @@ class EntityAccounts
     }
 
     /**
-     * @return String
+     * Fetch all account
+     *
+     * @return array
      */
-    public function getUsername(): string
+    public function getAccounts(): array
     {
-        return $this->username;
-    }
+        $items = array();
+        try {
+            $request = "SELECT * FROM accounts";
+            $result = $this->connection->query($request);
+            $items = $result->fetchAll();
 
-    /**
-     * @param String $username
-     */
-    public function setUsername(string $username)
-    {
-        $this->username = $username;
-    }
-
-    /**
-     * @return String
-     */
-    public function getPassword(): string
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param String $password
-     */
-    public function setPassword(string $password)
-    {
-        $this->password = $password;
+            return $items;
+        }
+        catch(PDOException $e) {
+            return $items;
+        }
     }
 
     /**
      * Fetch specified account
      *
-     *  @param String $username
+     * @param String $username
+     * @return array
      */
-    public function getAccountByUsername(string $username)
+    public function getAccountByUsername(string $username): array
     {
+        $item = array();
         try {
             $request = "SELECT * FROM accounts WHERE username = '$username'";
             $result = $this->connection->query($request);
-            $item = $result->fetchAll();
+            $item = $result->fetch();
 
-            $this->setUsername($item['username']);
-            $this->setPassword($item['password']);
+            return $item;
         }
         catch(PDOException $e) {
-            $this->setUsername('invalid');
-            $this->setPassword('invalid');
+            return $item;
         }
     }
 }
