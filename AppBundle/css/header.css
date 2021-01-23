@@ -24,7 +24,7 @@
 #navbar-logo {
     color: white;
     justify-self: start;
-    margin-left: 10px;
+    margin-left: 20px;
     cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
     grid-template-columns: repeat(5, auto);
     list-style: none;
     text-align: center;
-    width: 95%;
+    width: 70%;
     justify-self: end;
 
 }
@@ -45,7 +45,6 @@
     color: white;
     text-decoration: none;
     transition: all 0.2s ease-out;
-    font-size: larger;
 }
 
 .nav-links:hover {
@@ -61,7 +60,7 @@
     background-color: white;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .nav-container {
         position: relative;
     }
@@ -75,7 +74,7 @@
         position: absolute;
         top :80px;
         opacity: 0;
-
+        transition: all 0.5s ease;
     }
 
     #navbar-logo {

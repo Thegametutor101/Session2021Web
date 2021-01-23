@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/css/header.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +92,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" width="1718" height="1027" key="dock-window-1" timestamp="1611334747237">
