@@ -149,3 +149,55 @@
 .sticky + .content {
     padding-top: 90px;
 }
+
+.footer {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background: #222831;
+    padding: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.slice-footer {
+    height:175px;
+}
+
+
+
+.footer .credits {
+
+    position: absolute;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+.footer .credits p {
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 15px;
+
+}
+
+.footer li:hover{
+    color: #ffd369;
+    transition: all 0.5s ease;
+}
+
+.footer li:hover #layer101{
+    fill: #ffd369;
+    transition: all 0.5s ease;
+}
+
+.footer li{
+    height: 30px;
+    width: 30px;
+    list-style: none;
+}
