@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/img/MvSQ3AKR_400x400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/img/Cegep.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/img/facebook-square-brands.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/img/facebook-square-brands.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/img/logo département informatique.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/img/logodpartementinformatique.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/js/app.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nNpObezM8PO2pwH2W4PTUpUb8z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\img" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\js" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Pages" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\css" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="" />
+      <created>1611240372007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611240372007</updated>
+      <workItem from="1611240373079" duration="222000" />
+      <workItem from="1611325055294" duration="17985000" />
+      <workItem from="1611681371106" duration="8005000" />
+      <workItem from="1611706055858" duration="3613000" />
+      <workItem from="1611773546989" duration="1413000" />
+      <workItem from="1611777668704" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1206" y="199" width="587" height="1026" key="dock-window-1" timestamp="1611786313391">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1206" y="199" width="587" height="1026" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1611786313391" />
+    <state x="0" y="0" width="1718" height="1027" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611334747237" />
+    <state x="1913" y="0" width="974" height="1047" key="dock-window-2" timestamp="1611791216494">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1912" y="-8" width="976" height="1056" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1611790216449" />
+    <state x="1913" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611791216494" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3" timestamp="1611798059580">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1611798059580" />
+    <state x="92" y="298" width="1550" height="1027" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1611797751214" />
+  </component>
+</project>
