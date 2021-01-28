@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/img/MvSQ3AKR_400x400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/MvSQ3AKR_400x400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/cegep.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/facebook-square-brands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Session2021Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Session2021Web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/img/Cegep.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/img/facebook-square-brands.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/img/facebook-square-brands.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/img/logo département informatique.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/img/logodpartementinformatique.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/javascript/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/javascript/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +60,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -69,10 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Session2021Web\AppBundle\img" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\css" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\javascript" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\js" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Pages" />
-      <recent name="C:\wamp64\www\Session2021Web\AppBundle\css" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611240372007</updated>
       <workItem from="1611240373079" duration="222000" />
+      <workItem from="1611330624125" duration="9673000" />
       <workItem from="1611325055294" duration="17985000" />
       <workItem from="1611681371106" duration="8005000" />
       <workItem from="1611706055858" duration="3613000" />
