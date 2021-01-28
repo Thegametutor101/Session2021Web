@@ -1,17 +1,9 @@
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.nav-menu');
-
-menu.addEventListener('click',function (){
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-})
 
 window.onscroll = function () {
     myFunction()
 };
-
 // Get the navbar
-var navbar = document.getElementById("nav-container");
+var navbar = document.getElementById("nav");
 
 // Get the offset position of the navbar
 var sticky = navbar.offsetTop;
@@ -24,3 +16,28 @@ function myFunction() {
         navbar.classList.remove("sticky");
     }
 }
+
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li')
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active')
+
+        navLinks.forEach((link, index) => {
+
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinksFade 0.5s ease forwards ${index / 7 + .5}s`;
+
+            }
+        });
+        burger.classList.toggle('toggle')
+    });
+
+}
+
+
+navSlide();

@@ -1,0 +1,92 @@
+
+.footer {
+    width: 100%;
+    bottom: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer-bottom {
+
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: var(--baseDark);
+    color: var(--fontDarker);
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    background-color: var(--base);
+    padding: 50px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: var(--fontNormal);
+    margin-bottom: 35px;
+
+}
+
+.social-links {
+    display: flex;
+}
+.footer-col ul li a {
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-links a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links .back-icon-cegep a:hover {
+    color: var(--fontNormal);
+    background-color: #082c74;
+}
+
+.footer-col .social-links .back-icon-facebook a:hover {
+    color: var(--fontNormal);
+    background-color: #3b5998;
+}
+
+.back-icon-cegep a, .back-icon-facebook a {
+    padding: 5px;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
