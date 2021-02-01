@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/MvSQ3AKR_400x400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/cegep.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/facebook-square-brands.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Session2021Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Session2021Web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/informations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/cegeptr-connexion-reseau.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/cegeptr-rencontre.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/cegeptr-site-web.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/assets/img/informatique-2019-principale.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/information.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/javascript/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/javascript/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/palette.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +42,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,11 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets\img" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\css" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\javascript" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\js" />
-      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

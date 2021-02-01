@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --fontNormal: #cfdbd5;
+    --fontHover: #10b8e2;
+    --base: #242423;
+    --baseDark: #373737;
+    --fontDarker: #69706d;
+    --secondary: #113882;
+}
+.main {
+    color: var(--fontNormal);
+    font-family: 'Poppins', sans-serif;
+}
+.homeImage img {
+    width: 100%;
+    margin-bottom: -6px;
+}
+.description {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--secondary);
+    padding: 0 2% 20px;
+}
+.bulletPoints {
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    max-width: 42%;
+    margin: 0 2%;
+    padding: 30px;
+}
+.bulletPoints p {
+    margin: 10px 0 20px 2px;
+    font-size: 30px;
+}
+.bulletPoints li {
+    margin-bottom: 5px;
+}
+.resume {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 50%;
+    margin: 0 2%;
+    padding: 30px;
+}
+.resume p {
+    margin-bottom: 17px;
+    font-size: 15px;
+}
+.blocs {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 50px 5%;
+    max-width: 90%;
+    padding: 0 30px;
+}
+.infoPanel {
+    background-color: var(--baseDark);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+}
+.infoPanel img {
+    width: 40%;
+    height: 40%;
+    margin: 30px 0;
+    float: right;
+}
+.infoPanel p {
+    margin: 10px 0 20px 2px;
+    font-size: 30px;
+}
+.infoPanel  li {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 750px ) {
+    .description {
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary);
+        padding: 0 2% 20px;
+    }
+    .bulletPoints {
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        max-width: 96%;
+        margin: 0 2%;
+        padding: 10px;
+    }
+    .resume {
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        max-width: 96%;
+        margin: 0 2%;
+        padding: 10px;
+    }
+    .resume p {
+        margin-bottom: 17px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 930px){
+    .infoPanel {
+        background-color: var(--baseDark);
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .infoPanel img {
+        width: 40%;
+        height: 40%;
+        float: bottom;
+    }
+}
