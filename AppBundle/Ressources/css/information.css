@@ -67,8 +67,10 @@
 .infoPanel img {
     width: 40%;
     height: 40%;
-    margin: 30px 0;
     float: right;
+    display: block;
+    margin: auto;
+    overflow: auto;
 }
 .infoPanel p {
     margin: 10px 0 20px 2px;
@@ -77,8 +79,94 @@
 .infoPanel  li {
     margin-bottom: 5px;
 }
-
-@media screen and (max-width: 750px ) {
+.grid {
+    background-color: var(--baseDark);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 50px 5%;
+    max-width: 90%;
+    padding: 50px 30px;
+}
+.year {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+.year h3 {
+    padding-right: 90px;
+    position: absolute;
+    float: left;
+    height: 5%;
+    transform: rotate(-90deg);
+}
+.semester {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    width: 85%;
+    padding-bottom: 15px;
+    border-bottom: 2px solid crimson;
+}
+.semesterBlock {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 50%;
+}
+.number {
+    font-size: 110px;
+    color: #E98074;
+    width: 20%;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.fullGridButton {
+    color: var(--fontNormal);
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: var(--secondary);
+    border: 1px solid #0B2860;
+    text-align: center;
+    vertical-align: center;
+    padding: 10px 5px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.fullGridButton:hover {
+    box-shadow: rgb(6, 110, 172) 0 0 6px;
+    transition: all 200ms ease-out;
+}
+.fullGridButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.fullGridButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.fullGridButton:hover span {
+    padding-right: 25px;
+}
+.fullGridButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+@media screen and (max-width: 800px ) {
     .description {
         flex-direction: column;
         width: 100%;
@@ -107,7 +195,7 @@
     }
 }
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 1000px){
     .infoPanel {
         background-color: var(--baseDark);
         padding: 10px 15px;
@@ -118,5 +206,18 @@
         width: 40%;
         height: 40%;
         float: bottom;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .semester {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+        width: 80%;
+    }
+    .semesterBlock {
+        margin-bottom: 50px;
+        width: 100%;
     }
 }
