@@ -35,7 +35,7 @@
         <li><a href="#">Accueil</a></li>
         <li><a id="information" href="#">Information</a></li>
         <li><a href="#">Évènements</a></li>
-        <li><a href="#">Activité</a></li>
+        <li><a id="activities" href="#">Activité</a></li>
         <li><a href="#">À propos</a></li>
     </ul>
     <div class="burger">
@@ -110,6 +110,13 @@
         $("#information").on("click", function(e) {
             e.preventDefault();
             $.get("informations.html", function( data ) {
+                let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
+                $("#content").html(body);
+            });
+        });
+        $("#activities").on("click", function(e) {
+            e.preventDefault();
+            $.get("activities.html", function( data ) {
                 let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
                 $("#content").html(body);
             });

@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-:root {
-    --fontNormal: #cfdbd5;
-    --fontHover: #10b8e2;
-    --base: #242423;
-    --baseDark: #373737;
-    --fontDarker: #69706d;
-    --secondary: #113882;
-}
 .main {
     color: var(--fontNormal);
     font-family: 'Poppins', sans-serif;
@@ -108,7 +100,7 @@
     margin-left: 10%;
     width: 85%;
     padding-bottom: 15px;
-    border-bottom: 2px solid crimson;
+    border-bottom: 2px solid var(--accent);
 }
 .semesterBlock {
     display: flex;
@@ -165,6 +157,12 @@
 .fullGridButton:hover span:after {
     opacity: 1;
     right: 0;
+}
+.middleSubmit {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px 40px;
+    font-size: 40px;
 }
 @media screen and (max-width: 800px ) {
     .description {

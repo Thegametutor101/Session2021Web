@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getActivities.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/activities.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/activities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/javascript/activities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/informations.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/informations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/information.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/information.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +42,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Sass File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="tsconfig.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="Sass" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -90,6 +99,7 @@
       <workItem from="1612186001786" duration="93000" />
       <workItem from="1612293849112" duration="10957000" />
       <workItem from="1612358546825" duration="3687000" />
+      <workItem from="1612372209758" duration="9497000" />
     </task>
     <servers />
   </component>

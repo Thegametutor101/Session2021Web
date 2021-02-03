@@ -1,0 +1,24 @@
+{
+  "civicNumber": "3725",
+  "street": "Chanoine-Moreau",
+  "city": "Trois-Rivières",
+  "postalCode": "G8Y1R4",
+  "suite": "4"
+}
+
+//INSERT INTO `activities` (`id`,
+//                          `name`,
+//                          `description`,
+//                          `location`,
+//                          `dateStart`,
+//                          `dateEnd`,
+//                          `maxCapacity`,
+//                          `items`)
+//VALUES ('1',
+//        'Début des cours',
+//        'NOus allons tous feter ensembles le début des cours pour faire une session tres amusante et pleine de nouveaux projets intéressant et diversifiées pour notre cheminement personnel et professionel!..',
+//        '{ \"civicNumber\": \"3725\",   \"street\": \"Chanoine-Moreau\",   \"city\": \"Trois-Rivières\",   \"postalCode\": \"G8Y1R4\",   \"suite\": \"4\" }',
+//        '2021-02-10 09:30:00',
+//        '2021-03-12 19:00:00',
+//        '150',
+//        '');
