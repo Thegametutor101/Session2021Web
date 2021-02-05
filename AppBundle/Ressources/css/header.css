@@ -3,9 +3,10 @@
 :root {
     --fontNormal: #cfdbd5;
     --fontHover: #3abcdb;
-    --base: #242423;
+    --base: #212120;
     --baseDark: #373737;
     --fontDarker: #69706d;
+    --accent : #efd7a8;
 }
 
 * {
