@@ -1,7 +1,8 @@
-let d = new Date();
-let n = d.getFullYear()
+
+ d = new Date();
+ n = d.getFullYear()
 console.log(n)
-let content = "<div id='" + (n) + "'>"
+ content = "<div id='" + (n) + "'>"
 content += "<h3 class='year'>" + n + "</h3>"
 content += "</div>"
 $(document).ready(function () {
