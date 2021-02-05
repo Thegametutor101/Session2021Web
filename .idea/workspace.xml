@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d1f63c3-9556-40a2-9648-5033f269cd33" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/AppBundle/Management/getActivities.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/AppBundle/Pages/activities.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/activities.css" afterDir="false" />
@@ -30,6 +31,17 @@
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/informations.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/informations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/information.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/information.css" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/AppBundle/Ressources/php/bd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/Accueil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/evenement.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/evenement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/calendar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/javascript/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Ressources/javascript/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Ressources/javascript/evo-calendar.js" beforeDir="false" />
+>>>>>>> Alexis
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +56,11 @@
       <list>
         <option value="Sass File" />
         <option value="HTML File" />
+<<<<<<< HEAD
+=======
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+>>>>>>> Alexis
         <option value="CSS File" />
         <option value="tsconfig.json" />
         <option value="JavaScript File" />
@@ -53,6 +70,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1nNpObezM8PO2pwH2W4PTUpUb8z" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -67,18 +85,30 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Travail-Session-Web-2020" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+=======
+    <property name="ts.external.directory.path" value="C:\Users\alecu\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\203.7148.74\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+>>>>>>> Alexis
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets\img" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\css" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\javascript" />
       <recent name="C:\wamp64\www\Session2021Web\AppBundle\js" />
+=======
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\javascript" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\css" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets\img" />
+      <recent name="C:\wamp64\www\Session2021Web\AppBundle\Ressources\assets" />
+>>>>>>> Alexis
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,10 +126,20 @@
       <workItem from="1611706055858" duration="3613000" />
       <workItem from="1611773546989" duration="1413000" />
       <workItem from="1611777668704" duration="5000" />
+<<<<<<< HEAD
       <workItem from="1612186001786" duration="93000" />
       <workItem from="1612293849112" duration="10957000" />
       <workItem from="1612358546825" duration="3687000" />
       <workItem from="1612372209758" duration="9497000" />
+=======
+      <workItem from="1611864366501" duration="91000" />
+      <workItem from="1611939292920" duration="4270000" />
+      <workItem from="1612040288877" duration="1239000" />
+      <workItem from="1612289007951" duration="5899000" />
+      <workItem from="1612303745208" duration="600000" />
+      <workItem from="1612447407685" duration="10950000" />
+      <workItem from="1612535921541" duration="6969000" />
+>>>>>>> Alexis
     </task>
     <servers />
   </component>
@@ -118,4 +158,21 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="WindowStateProjectService">
+    <state x="667" y="163" key="#PHP" timestamp="1612538884698">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="163" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1612538884698" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612538767737">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1612538767737" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1612538824954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1612538824954" />
+  </component>
+>>>>>>> Alexis
 </project>

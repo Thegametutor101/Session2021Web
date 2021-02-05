@@ -2,24 +2,25 @@
 .footer {
     width: 100%;
     bottom: 0;
+
 }
 
 .container {
-    max-width: 1170px;
+
+    width: 70%;
     margin: auto;
 }
 
 .footer-bottom {
-
     text-align: center;
     bottom: 0;
-    width: 100%;
     padding: 5px;
     background-color: var(--baseDark);
     color: var(--fontDarker);
 }
 
 footer .row {
+    justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
 }
@@ -30,21 +31,52 @@ footer .row {
 }
 
 .footer-col {
-    width: 25%;
     padding: 0 15px;
 }
 
 .footer-col h4 {
     font-size: 18px;
     color: var(--fontNormal);
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 
 }
+
+a .bloc {
+    transform: translatex(-50px);
+    opacity: 0;
+}
+
+.nav-links a:hover .bloc {
+    transform: translatex(0);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.bloc {
+    width: 50px;
+    height: 2px;
+    background-color: var(--fontHover);
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color:var(--fontNormal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color:var(--fontNormal);
+    padding-left: 8px;
+}
+
 
 .social-links {
     display: flex;
 }
-.footer-col ul li a {
+
+.footer-col .social-links li a {
     text-align: center;
     font-size: 25px;
     color: #ffffff;
@@ -57,7 +89,7 @@ footer .row {
     height: 40px;
     width: 40px;
     background-color: rgba(255, 255, 255, 0.2);
-    margin: 0 10px 10px 0;
+margin-right: 10px;
     text-align: center;
     color: #ffffff;
     transition: all 0.5s ease;
@@ -66,10 +98,12 @@ footer .row {
 .footer-col .social-links .back-icon-cegep a:hover {
     color: var(--fontNormal);
     background-color: #082c74;
+    padding: 5px;
 }
 
 .footer-col .social-links .back-icon-facebook a:hover {
     color: var(--fontNormal);
+    padding: 5px;
     background-color: #3b5998;
 }
 

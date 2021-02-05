@@ -2,8 +2,8 @@
 
 :root {
     --fontNormal: #cfdbd5;
-    --fontHover: #10b8e2;
-    --base: #242423;
+    --fontHover: #3abcdb;
+    --base: #212120;
     --baseDark: #373737;
     --fontDarker: #69706d;
     --secondary: #092d74;
@@ -66,16 +66,23 @@ nav {
 
 .nav-links a {
     color: var(--fontNormal);
-
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 15px;
 }
 
 .nav-links a:hover {
-    color: var(--fontHover);
-    transform: rotate(45deg);
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease;
+}
+
+a .bloc{
+    transform: translatex(-50px);
+    opacity: 0;
+}
+.nav-links a:hover .bloc{
+    transform: translatex(0);
+    opacity: 1;
+    transition: all 0.3s ease;
 }
 
 .burger {
@@ -90,13 +97,8 @@ nav {
     background-color: var(--fontNormal);
 }
 
-@media screen and (max-width: 850px ) {
-    .nav-links {
-        width: 65%;
-    }
-}
 
-@media screen and (max-width: 800px ) {
+@media screen and (max-width: 1150px ) {
     body {
         overflow-x: hidden;
     }
@@ -104,13 +106,13 @@ nav {
     .nav-links {
         position: absolute;
         right: 0;
-        height: 85vh;
+        height: 60vh;
         top: 8vh;
         display: flex;
         flex-direction: column;
         background-color: var(--baseDark);
         align-items: center;
-        width: 50%;
+        width: 45%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
@@ -121,6 +123,16 @@ nav {
 
     .burger {
         display: block;
+    }
+}
+
+@media screen and (max-width: 520px ) {
+    .prog_name {
+        font-size: 16px;
+    }
+
+    .prog_name .cegep {
+        font-size: 14px;
     }
 }
 
