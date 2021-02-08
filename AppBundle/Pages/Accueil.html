@@ -19,8 +19,7 @@
     <!-- SCRIPT jquery et fontawesome -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
-
-
+    <script src="../Ressources/javascript/jquery-dateformat.js"></script>
 </head>
 <body>
 <nav id="nav">
@@ -133,8 +132,6 @@
 
 <script src="../Ressources/javascript/app.js"></script>
 <script>
-
-
     function changePage(path) {
         $.ajax(path, {
             success: function (response) {
@@ -143,39 +140,19 @@
             }
         });
     }
-
     $(document).ready(function () {
         $("#informations").click(function () {
             changePage("informations.html")
-        })
-
+        });
         $("#acceuil").click(function () {
             changePage("index.html")
-        })
-
+        });
         $("#events").click(function () {
             changePage("evenement.html")
-        })
-
+        });
         $("#activity").click(function () {
             changePage("activities.html")
-        })
-
-
-        /*$("#information").on("click", function(e) {
-            e.preventDefault();
-            $.get("informations.html", function( data ) {
-                let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
-                $("#content").html(body);
-            });
         });
-        $("#activities").on("click", function(e) {
-            e.preventDefault();
-            $.get("activities.html", function( data ) {
-                let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
-                $("#content").html(body);
-            });
-        });*/
     });
 </script>
 

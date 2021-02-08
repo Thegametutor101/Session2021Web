@@ -5,7 +5,46 @@
     font-family: 'Poppins', sans-serif;
 }
 .card {
-    background-color: var(--baseDark);
     width: 70%;
     margin: 20px 15%;
+    border-radius: 5px;
+    box-shadow: var(--baseDark) 0 0 6px;
+    display: flex;
+    flex-direction: row;
+}
+.card_id {display: none}
+.card_date {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 5px 10px;
+}
+.card_month {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+.card_day {
+    font-size: 55px;
+    margin: 15px 0;
+    text-align: center;
+}
+.card_time {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.card_from, .card_to {
+    font-size: 20px;
+    color: #d4deff;
+    margin: 0 5px;
+    text-align: center;
+    vertical-align: center;
+}
+.card_time_link {
+    font-size: 15px;
+    color: #d4deff;
+    text-align: center;
+    margin: auto 0;
 }

@@ -1,8 +1,7 @@
-
  d = new Date();
  n = d.getFullYear()
-console.log(n)
- content = "<div id='" + (n) + "'>"
+console.log(n);
+content = "<div id='" + (n) + "'>"
 content += "<h3 class='year'>" + n + "</h3>"
 content += "</div>"
 $(document).ready(function () {
@@ -15,12 +14,9 @@ $(document).ready(function () {
     document.getElementById("event-container").innerHTML = content;
 
     $.ajax({
-        url: "../Ressources/php/bd.php",
+        url: "../Management/getEvents.php",
         type: "POST",
         dataType: "json",
-        data: {
-            "requete": "selectEvents",
-        },
         success: function (reponse) {
             reponse.forEach(function (item) {
                 ajout(item['dateStart'], item['name'], item['description'])
