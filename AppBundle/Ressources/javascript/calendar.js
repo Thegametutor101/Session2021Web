@@ -1,11 +1,48 @@
-
- d = new Date();
- n = d.getFullYear()
+d = new Date();
+n = d.getFullYear()
 console.log(n)
- content = "<div id='" + (n) + "'>"
+content = "<div id='" + (n) + "'>"
 content += "<h3 class='year'>" + n + "</h3>"
 content += "</div>"
 $(document).ready(function () {
+    $(document).on('click', '.event', function () {
+        let id = this.id.split('event_')[1]
+        $.ajax({
+            url: "../Ressources/php/bd.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "requete": "getEvent",
+                "id":id
+            },
+            success: function (reponse) {
+                Swal.fire({
+                    padding: 1,
+                    width: '50%',
+                    title: reponse['name'],
+                    html: '<ul>' +
+                        '<li>Description :'+reponse['description']+'</li>' +
+                        '<li>Date de début :'+reponse['dateStart']+' </li>' +
+                        '<li>Date de fin :'+reponse['dateEnd']+' </li>' +
+                        '<li>Location : '+JSON.stringify(reponse['location']['city']) +'</li>' +
+                        '<li>Capacité de l\'evenement :'+reponse['maxCapacity']+' </li>' +
+                        '<li>Objet :<ul>' +
+                        '</ul> ' +
+                        '</li>' +
+                        '</ul>',
+                    imageUrl: 'https://unsplash.it/400/200',
+                    imageWidth: '100%',
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })
+            },
+            error: function (message, e) {
+               console.log(message);
+            }
+        });
+
+    });
+
     for (let i = n + 1; i < (n + 2); i++) {
         console.log(i)
         content += "<div id='" + (i) + "'>"
@@ -23,7 +60,7 @@ $(document).ready(function () {
         },
         success: function (reponse) {
             reponse.forEach(function (item) {
-                ajout(item['dateStart'], item['name'], item['description'])
+                ajout(item['dateStart'], item['name'], item['description'],item['id'])
             })
         },
         error: function (message, e) {
@@ -38,9 +75,9 @@ $(document).ready(function () {
         return monthNames[d.getMonth()]
     }
 
-    function ajout(date, title, desc) {
+    function ajout(date, title, desc,id) {
         let d = new Date(date)
-        let content = "<div class='event'>";
+        let content = "<div class='event' id='event_"+id+"'>";
         content += "<div class='event-left'>";
         content += "<div class='event-date'>";
         content += "<div class='date'>" + d.getDate() + "</div>";
