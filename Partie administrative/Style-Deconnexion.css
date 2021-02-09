@@ -1,0 +1,31 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:#222831;
+}
+
+img{
+    margin-left: 40%;
+    margin-top:15%;
+    width:20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #ffd369;
+}
+
+h1{
+    text-align: center;
+    color:#90B9DC;
+}
+
+input{
+    font-size: 2vw;
+    margin-left: 85vw;
+    margin-bottom: 1vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input:active{
+    transform: translateY(4px);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accueil Administratif</title>
+        <link rel="stylesheet" href="Style-Accueil-Administratif.css">
+        <link rel="stylesheet" href="Style-Partie-Administrative.css">
+    </head>
+
+    <body>
+
+        <!-- Le slide menu à gauche -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Accueil-Administratif.html" id="Page-Selectionne">Accueil Administratif</a>
+            <a href="Les-Utilisateurs.html">Utilisateurs</a>
+            <a href="Les-Actualites.html">Actualités</a>
+            <a href="Les-Evenements.html">Évènements</a>
+            <a href="Les-Liens.html">Liens</a>
+            <a href="Le-Contact.html">Contact</a>
+            <a href="Les-Temoignages.html">Témoignages</a>
+            <a href="Presentation-Programme.html">Présentation du Programme</a>
+            <a href="Video-Accueil.html">Vidéo d'Accueil</a>
+            <a href="Logs-Site-Web.html">Logs du Site Web</a>
+            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
+        </div>
+
+        <!-- Le bouton pour accéder au menu -->
+        <img src="Logo_Slide_Menu.png" onclick="openNav()">
+
+        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+        <div id="main">
+            <h2>Menu principal administratif</h2>
+            <p>C'est ici que vous allez pouvoir ajouter, modifier ou supprimer toutes les informations que vous désirez du site web.</p> <br>
+            <p>Vous pouvez donc naviguer dans le menu en haut à gauche afin d'ajouter, de modifier ou de supprimer n'importe quel élément à votre guise.</p>
+            <br><br>
+            <p>Bonne gestion !</p>
+        </div>
+
+    </body>
+
+    <script>
+        /* Fait fermer la fenêtre */
+        function closeWin() {
+            window.top.close();
+        }
+
+        /* Permet d'ouvrir le slide menu de gauche */
+        function openNav(){
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("main").style.marginLeft = "400px";
+        }
+
+        /* Permet de fermer le slide menu de gauche */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+    </script>
+</html>
