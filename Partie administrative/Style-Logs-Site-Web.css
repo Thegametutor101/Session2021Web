@@ -1,0 +1,37 @@
+.formulaire-log{
+    border: 2px solid #ffd369;
+    background-color: #393e46;
+    padding: 0.5%;
+    color: #C0D8E0;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display:flex;
+    justify-content: initial;
+    text-align: center;
+}
+
+.date{
+    width:15%;
+    padding: 0.5%;
+    margin-right: 1%;
+    border: 2px solid #ffd369;
+}
+
+.personne{
+    width:20%;
+    padding: 0.5%;
+    margin-right: 1%;
+    border: 2px solid #ffd369;
+}
+
+.objet{
+    width:65%;
+    padding: 0.5%;
+    border: 2px solid #ffd369;
+}
+
+h1{
+    text-align: center;
+    color: #CBE5F2;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les Témoignages</title>
+        <link rel="stylesheet" href="Style-Les-Temoignages.css">
+        <link rel="stylesheet" href="Style-Partie-Administrative.css">
+    </head>
+
+    <body>
+        <!-- Le slide menu à gauche -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Accueil-Administratif.html">Accueil Administratif</a>
+            <a href="Les-Utilisateurs.html">Utilisateurs</a>
+            <a href="Les-Actualites.html">Actualités</a>
+            <a href="Les-Evenements.html">Évènements</a>
+            <a href="Les-Liens.html">Liens</a>
+            <a href="Le-Contact.html">Contact</a>
+            <a href="Les-Temoignages.html" id="Page-Selectionne">Témoignages</a>
+            <a href="Presentation-Programme.html">Présentation du Programme</a>
+            <a href="Video-Accueil.html">Vidéo d'Accueil</a>
+            <a href="Logs-Site-Web.html">Logs du Site Web</a>
+            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
+        </div>
+
+        <!-- Le bouton pour accéder au menu-->
+        <img src="Logo_Slide_Menu.png" onclick="openNav()">
+
+        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+        <div id="main">
+            <div style="border: 2px solid #ffd369; width: 70%; margin-left: 15%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <button class="tablink" onclick="openCity('Ajouter', this, '#393e46')" id="defaultOpen">Ajouter</button>
+                <button class="tablink" onclick="openCity('Modifier', this, '#393e46')">Modifier</button>
+                <button class="tablink" onclick="openCity('Supprimer', this, '#393e46')">Supprimer</button>
+
+                <div id="Ajouter" class="tabcontent">
+                    <div style="display: flex; justify-content: space-around; margin-top: 5%; height: 30%;">
+                        <div style="padding : 2%; width: 30%;">
+                            <img src="ma-photo.jpg" style="margin-left: 0px; border-radius: 50%; height: 10vw; width: 10vw; margin-bottom: 10%;"> <br>
+                            <label for="choix-image">Vous pouvez ajouter une nouvelle image</label> <br>
+                            <input type="file" id="choix-image" style="margin: fill; overflow: hidden; font-size: 20px; margin-bottom: 40%;">
+                            <input type="submit" class="boutons-confirmation" name="creation-nouveau-temoignage" value="Créer le nouveau témoignage">
+                        </div>
+
+                        <div style="width: 30%;">
+                            <h4 style="text-align: left;">Nom complet</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;">
+                            <h4 style="text-align: left;">Finissant de quel année</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;">
+                            <h4 style="text-align: left;">Témoignage</h4>
+                            <textarea style="width: 100%; height: 50%; font-size: 25px; text-align: justify; resize: none; margin-bottom: 60%;"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="Modifier" class="tabcontent">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Liste de témoignages existants</button>
+                        <div class="dropdown-content">
+                            <a href="#">Témoignage 1</a>
+                            <a href="#">Témoignage 2</a>
+                            <a href="#">Témoignage 3</a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-around; margin-top: 5%; height: 30%;">
+
+                        <div style="padding : 2%; width: 30%;">
+                            <img src="ma-photo.jpg" style="margin-left: 0px; border-radius: 50%; height: 10vw; width: 10vw; margin-bottom: 10%;"> <br>
+                            <label for="choix-image">Vous pouvez ajouter une nouvelle image</label> <br>
+                            <input type="file" id="choix-image-modif" style="margin: fill; overflow: hidden; font-size: 20px; margin-bottom: 40%;">
+                            <input type="submit" class="boutons-confirmation" name="creation-nouveau-temoignage" value="Modifier le témoignage">
+                        </div>
+
+                        <div style="width: 30%;">
+                            <h4 style="text-align: left;">Nom complet</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;">
+                            <h4 style="text-align: left;">Finissant de quel année</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;">
+                            <h4 style="text-align: left;">Témoignage</h4>
+                            <textarea style="width: 100%; height: 50%; font-size: 25px; text-align: justify; resize: none; margin-bottom: 60%;"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="Supprimer" class="tabcontent">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Liste de témoignages existants</button>
+                        <div class="dropdown-content">
+                            <a href="#">Témoignage 1</a>
+                            <a href="#">Témoignage 2</a>
+                            <a href="#">Témoignage 3</a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-around; margin-top: 5%; height: 30%;">
+
+                        <div style="padding : 2%; width: 30%;">
+                            <img src="ma-photo.jpg" style="margin-left: 0px; border-radius: 50%; height: 10vw; width: 10vw; margin-bottom: 10%;"> <br>
+                            <input type="submit" id="bouton-supresssion" name="creation-nouveau-temoignage" value="Supprimer le témoignage">
+                        </div>
+
+                        <div style="width: 30%;">
+                            <h4 style="text-align: left;">Nom complet</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;" disabled>
+                            <h4 style="text-align: left;">Finissant de quel année</h4>
+                            <input type="text" style="width: 100%; height: 10%; font-size: 25px;" disabled>
+                            <h4 style="text-align: left;">Témoignage</h4>
+                            <textarea style="width: 100%; height: 50%; font-size: 25px; text-align: justify; resize: none; margin-bottom: 60%;" disabled></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+
+
+    <script>
+        /* Fait fermer la fenêtre */
+        function closeWin() {
+            window.top.close();
+        }
+
+        /* Permet d'ouvrir le slide menu de gauche */
+        function openNav(){
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("main").style.marginLeft = "400px";
+        }
+
+        /* Permet de fermer le slide menu de gauche */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        function openCity(cityName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(cityName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</html>

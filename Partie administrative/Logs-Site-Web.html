@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les Logs du Site Web</title>
+        <link rel="stylesheet" href="Style-Logs-Site-Web.css">
+        <link rel="stylesheet" href="Style-Partie-Administrative.css">
+    </head>
+
+    <body>
+        <!-- Le slide menu à gauche -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Accueil-Administratif.html">Accueil Administratif</a>
+            <a href="Les-Utilisateurs.html">Utilisateurs</a>
+            <a href="Les-Actualites.html">Actualités</a>
+            <a href="Les-Evenements.html">Évènements</a>
+            <a href="Les-Liens.html">Liens</a>
+            <a href="Le-Contact.html">Contact</a>
+            <a href="Les-Temoignages.html">Témoignages</a>
+            <a href="Presentation-Programme.html">Présentation du programme</a>
+            <a href="Video-Accueil.html">Vidéo d'accueil</a>
+            <a href="Logs-Site-Web.html" id="Page-Selectionne">Logs du Site Web</a>
+            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
+        </div>
+
+        <!-- Le bouton pour accéder au menu-->
+        <img src="Logo_Slide_Menu.png" onclick="openNav()">
+
+        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+        <div id="main">
+
+            <h1>Logs du site web</h1>
+
+            <div class="formulaire-log">
+                <div class="date">
+                    <p>21 février 2001</p>
+                </div>
+
+                <div class="personne">
+                    <p>Fabrice Déhoulé</p>
+                </div>
+
+                <div class="objet">
+                    <p>A modifié la vidéo d'accueil</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+
+    <script>
+        /* Fait fermer la fenêtre */
+        function closeWin() {
+            window.top.close();
+        }
+
+        /* Permet d'ouvrir le slide menu de gauche */
+        function openNav(){
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("main").style.marginLeft = "400px";
+        }
+
+        /* Permet de fermer le slide menu de gauche */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</html>
