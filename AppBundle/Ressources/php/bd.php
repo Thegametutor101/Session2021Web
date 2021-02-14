@@ -1,5 +1,4 @@
 <?php
-
 try {
     $connexion = new PDO('mysql:host=localhost;dbname=sessionweb2021;port=3308', 'root', '');
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

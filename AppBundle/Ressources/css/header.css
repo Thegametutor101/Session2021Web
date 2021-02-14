@@ -75,14 +75,21 @@ nav {
     transition: all 0.3s ease;
 }
 
-a .bloc{
+a .bloc {
     transform: translatex(-50px);
     opacity: 0;
 }
-.nav-links a:hover .bloc{
+
+.nav-links a:hover .bloc {
     transform: translatex(0);
     opacity: 1;
     transition: all 0.3s ease;
+}
+
+.bloc {
+    width: 50px;
+    height: 2px;
+    background-color: var(--fontHover);
 }
 
 .burger {

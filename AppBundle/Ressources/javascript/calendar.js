@@ -72,7 +72,7 @@ $(document).ready(function () {
         const monthNames = ["Janv", "Fevr", "Mars", "Avr", "Mai", "Juin",
             "Juill", "Août", "Sept", "Oct", "Nov", "Dec"
         ];
-        return monthNames[d.getMonth()]
+        return monthNames[date.getMonth()]
     }
 
     function ajout(date, title, desc,id) {
