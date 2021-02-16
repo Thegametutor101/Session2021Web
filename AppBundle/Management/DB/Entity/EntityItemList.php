@@ -17,13 +17,14 @@ class EntityItemList
     /**
      * Fetch all Item Lists
      *
+     * @param $id
      * @return array
      */
-    public function getItemLists(): array
+    public function getItemLists($id): array
     {
         $items = array();
         try {
-            $request = "SELECT * FROM itemlist";
+            $request = "SELECT * FROM itemlist WHERE id='$id'";
             $result = $this->connection->query($request);
             $items = $result->fetchAll();
 

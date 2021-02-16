@@ -8,37 +8,74 @@ $(document).ready(function () {
             cardClick();
         },
         error: function (message, er) {
-            console.log("downloading book list: " + er);
+            console.log("error loading activities: " + er);
         }
     });
     function printActivities(list) {
         for (i = 0; i < list.length; i++) {
             $(".main").append(
                 "<div class='card'>" +
-                "<div class='card_id'>" +  + "</div>" +
-                    // "<div class="card_date">" +
-                    //     //TODO add if in loop to check if activity lasts 1 day or more. if more show date and time else 1 date and from time to time
-                    //     "<div class='card_month'>" + Février + "</div>" +
-                    //     "<div class='card_day'>" + 10 + "</div>" +
-                    //     "<div class='card_time'>" +
-                    //         "<div class='card_from'>" + 09:30:00 + "</div>" +
-                    //         "<div class='card_time_link'> à</div>" +
-                    //         "<div class='card_to'>" + 19:00:00 + "</div>" +
-                    //     "</div>" +
-                    // "</div>" +
-                    "<div>" + $.format.date("2021-02-10 19:30:00", "h:mm a") + "</div>" +
-                    "<div class='id'>" + list[i][0] + "</div>" +
-                    "<div class='name'>" + list[i][1] + "</div>" +
-                    "<div class='description'>" + list[i][2] + "</div>" +
-                    "<div class='location'>" + list[i][3] + "</div>" +
-                    "<div class='dateStart'>" + $.format.date(list[i][4], "dd MMMM yyyy ") + "</div>" +
-                    "<div class='dateEnd'>" + list[i][5] + "</div>" +
-                    "<div class='maxCapacity'>" + list[i][6] + "</div>" +
-                    "<div class='items'>" + list[i][7] + "</div>" +
+                    "<div class='card_id'>" + list[i][0] + "</div>" +
+                    "<div class='card_date'>" +
+                        "<div class='card_month'>" + $.format.date(list[i][4], "MMMM") + "</div>" +
+                        "<div class='card_day'>" + checkActivityDateDay(list[i][4], list[i][5]) + "</div>" +
+                        "<div class='card_time'>" +
+                            checkActivityDateTime(list[i][4], list[i][5]) +
+                        "</div>" +
+                    "</div>" +
+                    "<div class='card_info'>" +
+                        "<div class='card_name'>" + list[i][1] + "</div>" +
+                        "<div class='card_description'>" + list[i][2] + "</div>" +
+                        "<div class='card_bottom'>" +
+                            "<div class='card_location'>" + JSON.parse(list[i][3])['suite'] + "-" +
+                                                        JSON.parse(list[i][3])['civicNumber'] + " " +
+                                                        JSON.parse(list[i][3])['street'] +
+                                                        ", " + JSON.parse(list[i][3])['city'] + "</div>" +
+                            "<div class='cap'>" +
+                                "<div class='card_maxCapacity'>" + list[i][6] + "</div>" +
+                                "<div class='material-icons'>person</div>" +
+                            "</div>" +
+                        "</div>" +
+                    "</div>" +
+                    "<div class='card_items'><div id='" + list[i][7] + "'></div>" +
+                        itemList(list[i][7]) + "</div>" +
                 "</div>");
         }
     }
     function cardClick() {
 
+    }
+    function checkActivityDateDay(start, end) {
+        if($.format.date(start, "dd") === $.format.date(end, "dd")) {
+            return $.format.date(start, "dd");
+        } else {
+            return $.format.date(start, "dd") + " - " + $.format.date(end, "dd");
+        }
+    }
+    function checkActivityDateTime(start, end) {
+        if($.format.date(start, "dd") === $.format.date(end, "dd")) {
+            return "<div class='card_from'>" + $.format.date(start, "h:mm a") + "</div>" +
+                    "<div class='card_time_link'> à</div>" +
+                    "<div class='card_to'>" + $.format.date(end, "h:mm a") + "</div>"
+        } else {
+            return "<div class='card_time_link'> Début à " + $.format.date(start, "h:mm a") + "</div>"
+        }
+    }
+    function itemList(items) {
+        $.ajax({
+            url: "../Management/getActivityItems.php",
+            type: "POST",
+            data: {'number': items},
+            dataType: "json",
+            success: function (result) {
+                for (i = 0; i < result['item'].length; i++) {
+                    $(".card").find("#" + items).append("<div>" + result['item'][i][2] + "</div>");
+                }
+            },
+            error: function (message, er) {
+                console.log("error loading activity items: " + er);
+            }
+        });
+        return "";
     }
 });
