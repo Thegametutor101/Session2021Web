@@ -1,10 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Contact</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style-Les_Evenements.css">
+    <link rel="stylesheet" href="Style-Partie-Administrative.css">
 </head>
+
 <body>
-$END$
+<!-- Le slide menu à gauche -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="Accueil-Administratif.html">Accueil Administratif</a>
+    <a href="Les-Utilisateurs.html">Utilisateurs</a>
+    <a href="Les-Actualites.html">Actualités</a>
+    <a href="Les-Evenements.html">Évènements</a>
+    <a href="Les-Liens.html">Liens</a>
+    <a href="Le-Contact.html" id="Page-Selectionne">Contact</a>
+    <a href="Les-Temoignages.html">Témoignages</a>
+    <a href="Presentation-Programme.html">Présentation du Programme</a>
+    <a href="Video-Accueil.html">Vidéo d'Accueil</a>
+    <a href="Logs-Site-Web.html">Logs du Site Web</a>
+    <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
+</div>
+
+<!-- Le bouton pour accéder au menu-->
+<img src="Logo_Slide_Menu.png" onclick="openNav()">
+
+<!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+<div id="main">
+    <h2>Le Contact</h2>
+    <div class="container">
+        <div class="contact__wrapper shadow-lg mt-n9">
+            <div class="row no-gutters">
+                <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+
+                    <ul class="contact-info__list list-style--none position-relative z-index-101">
+                        <li class="mb-4 pl-4">
+                            <span class="position-absolute"><i class="fas fa-envelope"></i></span> antoine.st.arnaud.01@edu.cegeptr.qc.ca
+                        </li>
+                        <li class="mb-4 pl-4">
+                            <span class="position-absolute"><i class="fas fa-phone"></i></span> (819)-376-1721, poste 1234
+                        </li>
+                        <li class="mb-4 pl-4">
+                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> Cégep de Trois-Rivières
+                            <br> Pavillon des Sciences
+                            <br> 3500 Rue de Courval
+                            <br> Trois-Rivières, Qc G9A 5E6
+                        </li>
+                    </ul>
+
+                    <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
+                            <defs>
+                                <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                                    <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                                </linearGradient>
+
+                            </defs>
+                            <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                            <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                        </svg>
+                    </figure>
+                </div>
+
+                <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                    <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="firstName">Adresse mail du département</label>
+                                    <input type="email" class="form-control" id="firstName" name="firstName" placeholder="exemple.01@edu.cegeptr.qc.ca">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label for="lastName">Numéro de téléphone du Cégep</label>
+                                    <input type="tel" class="form-control" id="lastName" name="lastName" placeholder="(012)-345-678">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Poste téléphonique</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="1234">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Nom de l'établissement</label>
+                                    <input type="text" class="form-control" id="nomEtablissement" name="email" placeholder="Cégep de Rosemont">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Nom du pavillon</label>
+                                    <input type="text" class="form-control" id="nomPavillon" name="pavillon" placeholder="De la science">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Adresse</label>
+                                    <input type="text" class="form-control" id="adresse" name="pavillon" placeholder="123 rue de base">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Ville</label>
+                                    <input type="text" class="form-control" id="ville" name="pavillon" placeholder="Shawinigan">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <div class="form-group">
+                                    <label class="required-field" for="email">Code Postal</label>
+                                    <input type="text" class="form-control" id="codePostal" name="pavillon" placeholder="A1B 2C3">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-2">
+                                <button type="submit" name="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- End Contact Form Wrapper -->
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
+
+<script>
+    /* Fait fermer la fenêtre */
+    function closeWin() {
+        window.top.close();
+    }
+
+    /* Permet d'ouvrir le slide menu de gauche */
+    function openNav(){
+        document.getElementById("mySidenav").style.width = "400px";
+        document.getElementById("main").style.marginLeft = "400px";
+    }
+
+    /* Permet de fermer le slide menu de gauche */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
 </html>
