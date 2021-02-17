@@ -35,3 +35,39 @@ h1{
     text-align: center;
     color: #CBE5F2;
 }
+
+#liste{
+    background-color:#393e46;
+    margin-top:20px;
+    margin-left: 20%;
+    width: 60%;
+    padding-top: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card {
+    background-color: #616f80;
+    border: none;
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+}
+
+.avatar-xs {
+    height: 2.3rem;
+    width: 2.3rem;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1% 0% 1% 0%;
+    background-color: #393e46;
+    color: white;
+    text-align: center;
+}
+
+#RevenirHaut{
+    height: 0;
+}
