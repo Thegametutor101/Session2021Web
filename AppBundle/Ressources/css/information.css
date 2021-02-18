@@ -45,13 +45,12 @@
 .blocs {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: 50px 5%;
-    max-width: 90%;
-    padding: 0 30px;
+    width: 100%;
+    max-width: 100%;
 }
 .infoPanel {
     background-color: var(--baseDark);
+    color: var(--base);
     padding: 40px 20px;
     display: flex;
     flex-direction: row;
@@ -75,9 +74,8 @@
     background-color: var(--baseDark);
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: 50px 5%;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     padding: 50px 30px;
 }
 .year {
@@ -165,12 +163,11 @@
     font-size: 40px;
 }
 .parallax{
-    background-image: url(../assets/img/cegeptr-site-web.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 400px;
 }
 @media screen and (max-width: 800px ) {
     .description {
