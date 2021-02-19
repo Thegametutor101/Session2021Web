@@ -1,161 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajout d'événement</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style-Les_Evenements.css">
-    <link rel="stylesheet" href="Style-Partie-Administrative.css">
+	<meta charset = "UTF-8">
+	<meta content = "width=device-width, initial-scale=1.0" name = "viewport">
+	<title>Ajout d'événement</title>
+
+	<link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel = "stylesheet">
+	<link crossorigin = "anonymous" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity = "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			rel = "stylesheet">
+	<link href = "Style-Les_Evenements.css" rel = "stylesheet">
+	<link href = "Style-Partie-Administrative.css" rel = "stylesheet">
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script crossorigin = "anonymous" src = "https://kit.fontawesome.com/86aa9796b2.js"></script>
 </head>
 
 <body>
 <!-- Le slide menu à gauche -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="Accueil-Administratif.html">Accueil Administratif</a>
-    <a href="Les-Utilisateurs.html">Utilisateurs</a>
-    <a href="Les-Actualites.html">Actualités</a>
-    <a href="Les-Evenements.html">Évènements</a>
-    <a href="Les-Liens.html">Liens</a>
-    <a href="Le-Contact.html" id="Page-Selectionne">event</a>
-    <a href="Les-Temoignages.html">Témoignages</a>
-    <a href="Presentation-Programme.html">Présentation du Programme</a>
-    <a href="Video-Accueil.html">Vidéo d'Accueil</a>
-    <a href="Logs-Site-Web.html">Logs du Site Web</a>
-    <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
+<div class = "sidenav" id = "mySidenav">
+	<a class = "closebtn" href = "javascript:void(0)" onclick = "closeNav()">&times;</a>
+	<a href = "Accueil-Administratif.html">Accueil Administratif</a>
+	<a href = "Les-Utilisateurs.html">Utilisateurs</a>
+	<a href = "Les-Actualites.html">Actualités</a>
+	<a href = "Les-Evenements.html">Évènements</a>
+	<a href = "Les-Liens.html">Liens</a>
+	<a href = "Le-Contact.html" id = "Page-Selectionne">event</a>
+	<a href = "Les-Temoignages.html">Témoignages</a>
+	<a href = "Presentation-Programme.html">Présentation du Programme</a>
+	<a href = "Video-Accueil.html">Vidéo d'Accueil</a>
+	<a href = "Logs-Site-Web.html">Logs du Site Web</a>
+	<a href = "Deconnexion.html" id = "deconnexion" onclick = "closeWin()" target = "_blank">Déconnexion</a>
 </div>
 
-<img src="Logo_Slide_Menu.png" onclick="openNav()">-
+<img onclick = "openNav()" src = "Logo_Slide_Menu.png">-
 
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
-<div id="main">
-    <h2>Modifier l'évènement</h2>
-    <div class="container">
-        <div class="event__wrapper shadow-lg mt-n9">
-            <div class="row no-gutters">
-                <div class="col-lg-5 event-info__wrapper gradient-brand-color p-5 order-lg-2">
+<div id = "main">
+	<h2>Ajouter</h2>
+	<div class = "container">
+		<div class = "event__wrapper shadow-lg mt-n9">
+			<div class = "row no-gutters">
+				<div class = "col-lg-5 event-info__wrapper gradient-brand-color p-5 order-lg-2">
+					<figure class = "figure position-absolute m-0 opacity-06 z-index-100"
+							style = "bottom:0; right: 10px">
+						<svg height = "626px" width = "444px"
+								xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink">
+							<defs>
+								<linearGradient id = "PSgrad_1" x1 = "0%" x2 = "81.915%" y1 = "57.358%" y2 = "0%">
+									<stop offset = "0%" stop-color = "rgb(255,255,255)" stop-opacity = "1"></stop>
+									<stop offset = "100%" stop-color = "rgb(0,54,207)" stop-opacity = "0"></stop>
+								</linearGradient>
 
-                    <ul class="event-info__list list-style--none position-relative z-index-101">
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-envelope"></i></span><p class="nom">nom</p>
-                        </li>
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-file-alt"></i></span> <p class="description">description</p>
-                        </li>
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span><p class="debut">debut</p>
-                        </li>
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span><p class="fin">fin</p>
-                        </li>
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-users"></i></span><p class="capacité">capacité</p>
-                        </li>
-                        <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span><p class="location">Location</p>
-                        </li>
-                    </ul>
+							</defs>
+							<path d = "M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"
+									fill = "rgb(72, 155, 248)" fill-rule = "evenodd"
+									opacity = "0.302"></path>
+							<path d = "M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"
+									fill = "url(#PSgrad_1)"></path>
+						</svg>
+					</figure>
+				</div>
 
-                    <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
-                            <defs>
-                                <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
-                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
-                                    <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
-                                </linearGradient>
+				<div class = "col-lg-7 event-form__wrapper p-5 order-lg-1">
+					<form class = "event-form form-validate" id = "event-form" novalidate = "novalidate">
+						<div class = "row">
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "name">Nom</label>
+									<input class = "form-control" id = "name" name = "name"
+											placeholder = "Nom"
+											type = "text">
+								</div>
+							</div>
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "description">Description</label>
+									<input class = "form-control" id = "description" name = "description"
+											placeholder = "Description"
+											type = "text">
+								</div>
+							</div>
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "location">Location</label>
+									<input class = "form-control" id = "location" name = "location"
+											placeholder = "Location"
+											type = "text">
+								</div>
+							</div>
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "dateStart">Date de début</label>
+									<input class = "form-control" id = "dateStart" name = "dateStart"
+											placeholder = "Date de début"
+											type = "date">
+								</div>
+							</div>
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "dateEnd">Date de fin</label>
+									<input class = "form-control" id = "dateEnd" name = "dateEnd"
+											placeholder = "Date de fin"
+											type = "date">
+								</div>
+							</div>
+							<div class = "col-sm-12 mb-2">
+								<div class = "form-group">
+									<label class = "required-field" for = "capacity">Capacité de l'évenement</label>
+									<input class = "form-control" id = "capacity" name = "capacity"
+											placeholder = "Capacité"
+											type = "number">
+								</div>
+							</div>
 
-                            </defs>
-                            <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
-                            <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
-                        </svg>
-                    </figure>
-                </div>
 
-                <div class="col-lg-7 event-form__wrapper p-5 order-lg-1">
-                    <form action="#" class="event-form form-validate" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="firstName">Adresse mail du département</label>
-                                    <input type="email" class="form-control" id="firstName" name="firstName" placeholder="exemple.01@edu.cegeptr.qc.ca">
-                                </div>
-                            </div>
+							<div class = "col-sm-12 mb-2">
+								<button class = "btn btn-primary" id = "bt-ajouter" name = "submit"
+										type = "submit">Ajouter
+								</button>
+							</div>
 
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label for="lastName">Numéro de téléphone du Cégep</label>
-                                    <input type="tel" class="form-control" id="lastName" name="lastName" placeholder="(012)-345-678">
-                                </div>
-                            </div>
+						</div>
+					</form>
+				</div>
+				<!-- End event Form Wrapper -->
 
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Poste téléphonique</label>
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="1234">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Nom de l'établissement</label>
-                                    <input type="text" class="form-control" id="nomEtablissement" name="email" placeholder="Cégep de Rosemont">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Nom du pavillon</label>
-                                    <input type="text" class="form-control" id="nomPavillon" name="pavillon" placeholder="De la science">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Adresse</label>
-                                    <input type="text" class="form-control" id="adresse" name="pavillon" placeholder="123 rue de base">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Ville</label>
-                                    <input type="text" class="form-control" id="ville" name="pavillon" placeholder="Shawinigan">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <div class="form-group">
-                                    <label class="required-field" for="email">Code Postal</label>
-                                    <input type="text" class="form-control" id="codePostal" name="pavillon" placeholder="A1B 2C3">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mb-2">
-                                <button type="submit" name="submit" class="btn btn-primary">Enregistrer les modifications</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-                <!-- End event Form Wrapper -->
-
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 
 
 <script>
+    $(document).ready(function () {
+
+
+        $('#bt-ajouter').click(function (e) {
+            e.preventDefault()
+            $.ajax({
+                url: "../Ressources/php/bd.php",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "requete": "insertEvent",
+                    "name": $('#name').val(),
+                    "description": $('#description').val(),
+                    "location": $('#location').val(),
+                    "dateStart": $('#dateStart').val(),
+                    "dateEnd": $('#dateEnd').val(),
+                    "maxCapacity": $('#capacity').val()
+                },
+                success: function (reponse) {
+                    console.log(reponse)
+                    window.location.href = "Accueil_Administratif.html";
+                },
+                error: function (message, e) {
+                    console.log(message);
+                }
+
+            });
+
+
+        })
+    })
+
     /* Fait fermer la fenêtre */
     function closeWin() {
         window.top.close();
     }
 
     /* Permet d'ouvrir le slide menu de gauche */
-    function openNav(){
+    function openNav() {
         document.getElementById("mySidenav").style.width = "400px";
         document.getElementById("main").style.marginLeft = "400px";
     }
