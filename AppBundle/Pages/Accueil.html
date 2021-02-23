@@ -43,9 +43,6 @@
         <li><a href="#" id="acceuil">Accueil
             <div class="bloc"></div>
         </a></li>
-        <li><a href="#" id="informations">Information
-            <div class="bloc"></div>
-        </a></li>
         <li><a href="#" id="events">Évènements
             <div class="bloc"></div>
         </a></li>
@@ -132,26 +129,24 @@
 
 <script src="../Ressources/javascript/app.js"></script>
 <script>
+    changePage("informations.html");
     function changePage(path) {
         $.ajax(path, {
             success: function (response) {
                 let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
-                $("#content").html(body)
+                $("#content").html(body);
             }
         });
     }
     $(document).ready(function () {
-        $("#informations").click(function () {
-            changePage("informations.html")
-        });
         $("#acceuil").click(function () {
-            changePage("index.html")
+            changePage("informations.html");
         });
         $("#events").click(function () {
-            changePage("evenement.html")
+            changePage("evenement.html");
         });
         $("#activity").click(function () {
-            changePage("activities.html")
+            changePage("activities.html");
         });
     });
 </script>

@@ -139,11 +139,10 @@
         $('#bt-ajouter').click(function (e) {
             e.preventDefault()
             $.ajax({
-                url: "../Ressources/php/bd.php",
+                url: "../Management/addEvent.php",
                 type: "POST",
                 dataType: "json",
                 data: {
-                    "requete": "insertEvent",
                     "name": $('#name').val(),
                     "description": $('#description').val(),
                     "location": $('#location').val(),
@@ -158,13 +157,9 @@
                 error: function (message, e) {
                     console.log(message);
                 }
-
             });
-
-
-        })
-    })
-
+        });
+    });
     /* Fait fermer la fenêtre */
     function closeWin() {
         window.top.close();
