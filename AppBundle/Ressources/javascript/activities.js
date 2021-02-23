@@ -27,10 +27,10 @@ $(document).ready(function () {
                         "<div class='card_name'>" + list[i][1] + "</div>" +
                         "<div class='card_description'>" + list[i][2] + "</div>" +
                         "<div class='card_bottom'>" +
-                            "<div class='card_location'>" + JSON.parse(list[i][3])['suite'] + "-" +
-                                                        JSON.parse(list[i][3])['civicNumber'] + " " +
-                                                        JSON.parse(list[i][3])['street'] +
-                                                        ", " + JSON.parse(list[i][3])['city'] + "</div>" +
+                            "<div class='card_location'>" + JSON.parse(list[i][3])['apartment'] + "-" +
+                                                            JSON.parse(list[i][3])['address'] + ", " +
+                                                            JSON.parse(list[i][3])['city'] + " " +
+                                                            JSON.parse(list[i][3])['province'] + "</div>" +
                             "<div class='cap'>" +
                                 "<div class='card_maxCapacity'>" + list[i][6] + "</div>" +
                                 "<div class='material-icons'>person</div>" +
