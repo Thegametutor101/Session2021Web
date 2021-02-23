@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Les Logs du Site Web</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../Ressources/css/Style-Logs-Site-Web.css">
@@ -54,36 +55,36 @@
                         <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                             <p>Infos supplémentaires</p>
                             <label>
-                                <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" onclick="EnableDisable" checked>
+                                <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" checked>
                                 Rien
                             </label><br>
                             <label>
-                                <input type="radio" name="infos_supp" id="connexions" value="Connexions" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="connexions" value="Connexions">
                                 Connexions
                             </label><br>
 
                             <label>
-                                <input type="radio" name="infos_supp" id="déconnexions" value="Déconnexions" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="deconnexions" value="Déconnexions">
                                 Déconnexions
                             </label><br>
 
                             <label>
-                                <input type="radio" name="infos_supp" id="modif_video_accueil" value="Modification de la vidéo d'accueil" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="modif_video_accueil" value="Modification de la vidéo d'accueil">
                                 Modification de la vidéo d'accueil
                             </label><br>
 
                             <label>
-                                <input type="radio" name="infos_supp" id="modif_presentation_programme" value="Modification de la présentation du programme" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="modif_presentation_programme" value="Modification de la présentation du programme">
                                 Modification de la présentation du programme
                             </label><br>
 
                             <label>
-                                <input type="radio" name="infos_supp" id="mail_envoye" value="Mails envoyés" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="mail_envoye" value="Mails envoyés">
                                 Mails envoyés
                             </label><br>
 
                             <label>
-                                <input type="radio" name="infos_supp" id="bouton_inscription" value="Appuie du bouton 's'inscrire'" onclick="EnableDisable">
+                                <input type="radio" name="infos_supp" id="bouton_inscription" value="Appuie du bouton 's'inscrire'">
                                 Appuie du bouton "S'inscrire"
                             </label>
                         </div>
@@ -95,37 +96,37 @@
                                 <div>
                                     <p>Sujet</p>
                                     <label>
-                                        <input type="radio" name="sujet" id="sujet_rien" value="Rien" style="text-align: center" onclick="EnableDisable" checked>
+                                        <input type="radio" name="sujet" id="sujet_rien" value="Rien" style="text-align: center" checked>
                                         Rien
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="temoignage" value="Témoignages" style="text-align: center" onfocus="EnableDisable">
+                                        <input type="radio" name="sujet" id="temoignage" value="Témoignages" style="text-align: center">
                                         Témoignages
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="contact" value="Contacts" onclick="EnableDisable">
+                                        <input type="radio" name="sujet" id="contact" value="Contacts">
                                         Contacts
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="lien" value="Liens" onclick="EnableDisable">
+                                        <input type="radio" name="sujet" id="lien" value="Liens">
                                         Liens
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="evenement" value="Évènements" onclick="EnableDisable">
+                                        <input type="radio" name="sujet" id="evenement" value="Évènements">
                                         Évènements
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="actualite" value="Actualités" onclick="EnableDisable">
+                                        <input type="radio" name="sujet" id="actualite" value="Actualités">
                                         Actualités
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="sujet" id="utilisateur" value="Utilisateurs" onclick="EnableDisable">
+                                        <input type="radio" name="sujet" id="utilisateur" value="Utilisateurs">
                                         Utilisateurs
                                     </label>
                                 </div>
@@ -136,22 +137,22 @@
                                 <div>
                                     <p>Type de requête</p>
                                     <label>
-                                        <input type="radio" name="type_requete" id="type_rien" value="Rien" onclick="EnableDisable" checked disabled>
+                                        <input type="radio" name="type_requete" id="type_rien" value="Rien" checked disabled>
                                         Rien
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="type_requete" id="ajouter" value="Ajouter" onclick="EnableDisable" disabled>
+                                        <input type="radio" name="type_requete" id="ajouter" value="Ajouter" disabled>
                                         Ajouter
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="type_requete" id="modifier" value="Modifier" onclick="EnableDisable" disabled>
+                                        <input type="radio" name="type_requete" id="modifier" value="Modifier" disabled>
                                         Modifier
                                     </label><br>
 
                                     <label>
-                                        <input type="radio" name="type_requete" id="supprimer" value="Supprimer" onclick="EnableDisable" disabled>
+                                        <input type="radio" name="type_requete" id="supprimer" value="Supprimer" disabled>
                                         Supprimer
                                     </label>
                                 </div>
@@ -326,54 +327,104 @@
             window.scrollTo(0,0);
         }
 
-
-
-
-    </script>
-
-    <script type="text/javascript">
-        function EnableDisable(){
-            /* Toutes les variables nécessaires afin de bloquer le tout */
-            /* Partie infos supplémentaires */
-            var infos_supp_rien = document.getElementById("infos_supp_rien");
-            var connexions = document.getElementById("connexions");
-            var deconnexions = document.getElementById("déconnexions");
-            var modif_video_accueil = document.getElementById("modif_video_accueil");
-            var modif_presentation_programme = document.getElementById("modif_presentation_programme");
-            var mails = document.getElementById("mail_envoye");
-            var inscriptions = document.getElementById("bouton_inscription");
-            /* Partie sujet */
-            var sujet_rien = document.getElementById("sujet_rien");
-            var temoignage = document.getElementById("temoignage");
-            var contact = document.getElementById("contact");
-            var lien = document.getElementById("lien");
-            var evenement = document.getElementById("evenement");
-            var actualite = document.getElementById("actualite");
-            var utilisateur = document.getElementById("utilisateur");
-            /* Partie Type de Requête */
-            var type_rien = document.getElementById("type_rien");
-            var ajouter = document.getElementById("ajouter");
-            var modifier = document.getElementById("modifier");
-            var supprimer = document.getElementById("supprimer");
-
-            /* Permet de bloquer les sujets et les types de requêtes si l'une des infos supplémentaires est sélectionné */
-            if (document.getElementById("temoignage").checked === true){
-                $("#type_rien").prop("enabled", true);
-            }
-
-            $("#temoignage").click( function (){
-                if ($("#type_rien").is(':checked')){
-                    alert("it's checked");
-            } else {alert("it's not");
-            }
+        $(document).ready(function (){
+            /* Partie de gauche */
+            $("#infos_supp_rien").change(function () {
+                enabledGauche();
+            });
+            $("#connexions").change(function () {
+                disabledGauche();
+            });
+            $("#deconnexions").change(function () {
+                disabledGauche();
+            });
+            $("#modif_video_accueil").change(function () {
+                disabledGauche();
+            });
+            $("#modif_presentation_programme").change(function () {
+                disabledGauche();
+            });
+            $("#mail_envoye").change(function () {
+                disabledGauche();
+            });
+            $("#bouton_inscription").change(function () {
+                disabledGauche();
             });
 
-            /* Permet de bloquer les infos supplémentaires si ce dernier un sujet et/ou un type de requête a été pris */
+            /* Partie de droite */
+            $("#sujet_rien").change(function () {
+                disabledDroite();
+            });
+           $("#temoignage").change(function () {
+               enabledDroite();
+           });
+            $("#contact").change(function () {
+                enabledDroite();
+            });
+            $("#lien").change(function () {
+                enabledDroite();
+            });
+            $("#evenement").change(function () {
+                enabledDroite();
+            });
+            $("#actualite").change(function () {
+                enabledDroite();
+            });
+            $("#utilisateur").change(function () {
+                enabledDroite();
+            });
 
+        });
+
+        function disabledGauche(){
+            $("#sujet_rien").prop("disabled", true);
+            $("#type_rien").prop("disabled", true);
+            $("#temoignage").prop("disabled", true);
+            $("#contact").prop("disabled", true);
+            $("#lien").prop("disabled", true);
+            $("#evenement").prop("disabled", true);
+            $("#actualite").prop("disabled", true);
+            $("#utilisateur").prop("disabled", true);
         }
-    </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        function enabledGauche(){
+            $("#sujet_rien").prop("disabled", false);
+            $("#temoignage").prop("disabled", false);
+            $("#contact").prop("disabled", false);
+            $("#lien").prop("disabled", false);
+            $("#evenement").prop("disabled", false);
+            $("#actualite").prop("disabled", false);
+            $("#utilisateur").prop("disabled", false);
+            $("#sujet_rien").prop("checked", true);
+        }
+
+        function disabledDroite(){
+            $("#type_rien").prop("disabled", true);
+            $("#ajouter").prop("disabled", true);
+            $("#modifier").prop("disabled", true);
+            $("#supprimer").prop("disabled", true);
+            $("#connexions").prop("disabled", false);
+            $("#deconnexions").prop("disabled", false);
+            $("#modif_video_accueil").prop("disabled", false);
+            $("#modif_presentation_programme").prop("disabled", false);
+            $("#mail_envoye").prop("disabled", false);
+            $("#bouton_inscription").prop("disabled", false);
+        }
+
+
+        function enabledDroite(){
+            $("#type_rien").prop("disabled", false);
+            $("#ajouter").prop("disabled", false);
+            $("#modifier").prop("disabled", false);
+            $("#supprimer").prop("disabled", false);
+            $("#connexions").prop("disabled", true);
+            $("#deconnexions").prop("disabled", true);
+            $("#modif_video_accueil").prop("disabled", true);
+            $("#modif_presentation_programme").prop("disabled", true);
+            $("#mail_envoye").prop("disabled", true);
+            $("#bouton_inscription").prop("disabled", true);
+            $("#type_rien").prop("checked", true);
+        }
 
     </script>
 </html>
