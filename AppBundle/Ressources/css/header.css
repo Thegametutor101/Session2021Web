@@ -50,12 +50,12 @@ nav {
     color: var(--fontNormal);
     fill: var(--fontNormal);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .logo-container:hover {
     color: var(--fontHover);
     fill: var(--fontHover);
-    cursor: pointer;
     transition: all 0.3s ease-in;
 }
 

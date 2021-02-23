@@ -37,7 +37,6 @@
             <p class="tech_info">Technique d'informatique de Gestion</p>
             <p class="cegep">Cégep de Trois-Rivières</p>
         </div>
-
     </div>
     <ul class="nav-links">
         <li><a href="#" id="acceuil">Accueil
@@ -140,6 +139,9 @@
     }
     $(document).ready(function () {
         $("#acceuil").click(function () {
+            changePage("informations.html");
+        });
+        $(".logo-container").click(function () {
             changePage("informations.html");
         });
         $("#events").click(function () {

@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --fontNormal: #cfdbd5;
+    --fontHover: #3abcdb;
+    --base: #212120;
+    --baseDark: #373737;
+    --fontDarker: #69706d;
+    --secondary: #092d74;
+    --secondaryLight: #1247b0;
+    --accent: #d4152d;
+}
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,27 +18,14 @@ body{
     background-color:#222831;
 }
 
-img{
-    width:35%;
-    height:25%;
-    margin-top:5%;
-    margin-left:30%;
-    background-color:#607D8B;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .formulaire{
-    border: 2px solid #ffd369;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 0.5%;
-    width: 50vw;
-    max-width: 100%;
-    height: 35vw;
-    max-height: 80%;
+    padding: 20px 15px;
+    width: 50%;
+    max-width: 50%;
     background-color:#393e46;
     align-content: center;
-    margin:auto;
-    margin-top:2vw;
+    margin: 70px 25%;
 }
 
 .sous-titres{
@@ -43,18 +42,19 @@ img{
 }
 
 #confirmation{
-    color:#ffd369;
+    color: var(--fontNormal);
     font-size: 1vw;
     background-color: #385DAA;
+    border: none;
     width:15vw;
     height: 10%;
     margin-top:3%;
     margin-left: 32.5%;
+    padding: 8px 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 #confirmation:active{
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
 
 #copyright{
@@ -65,4 +65,20 @@ img{
     left:0;
     bottom:0;
     width:100%;
+}
+
+.logo {
+    align-self: start;
+    height: 10px;
+    max-height: 10px;
+    padding: 10px;
+}
+.prog_name {font-size: 14px;}
+.prog_name .cegep {font-size: 12px;}
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: var(--fontNormal);
+    fill: var(--fontNormal);
+    text-transform: uppercase;
 }
