@@ -35,7 +35,7 @@
 
             <h1 style="color:white; text-align: center;">Les utilisateurs</h1>
 
-            <button class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
+            <button id="creation_utilisateur" class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
 
 
             <div id="liste" style="margin-bottom: 5%;">
@@ -52,7 +52,7 @@
 
                                             <thead>
                                             <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">ID</th>
                                                 <th scope="col">Nom d'utilisateur</th>
                                                 <th scope="col">Photo</th>
                                                 <th scope="col">Modifier?</th>
@@ -68,12 +68,14 @@
                                             <tr>
                                                 <th scope="row">1</th>
                                                 <td width="50%;">François Jacob</td>
-                                                <td>21 février 2001</td>
                                                 <td>
-                                                    <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    <img src="../Ressources/images/ma-photo.jpg" class="rounded-circle avatar-xs" alt="" title="Antoine St-Arnaud"/>
                                                 </td>
                                                 <td>
-                                                    <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="Modification"/>
+                                                </td>
+                                                <td>
+                                                    <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="Supression" onclick="confirmation()"/>
                                                 </td>
                                             </tr>
 
@@ -91,12 +93,46 @@
                 </div>
 
             </div>
+
+            <!--Modal de création d'utilisateur-->
+            <div id="modal_creation" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div style="margin:auto; width: 60%; padding: 10px;">
+                        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="text-align: center; color:white;">Création d'utilisateur</h4>
+                                <img src="../Ressources/images/inconnu.jpg" style="width: 100%;">
+                                <button id="bouton_ajout_image_creation" class="button bleu_pale" style="margin-left: 20%; margin-top: 1%;">Nouvel utilisateur</button>
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <label for="prenom_creation">Prénom</label>
+                                <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
+                                <label for="nom_creation" style="margin-top: 1%;">Nom</label>
+                                <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
     </body>
 
 
     <script>
-
         /* Fait fermer la fenêtre */
         function closeWin() {
             window.top.close();
@@ -113,5 +149,27 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+
+        /* Pour les modals */
+        var modal_creation = document.getElementById("modal_creation");
+        var btn_creation = document.getElementById("creation_utilisateur");
+        var span = document.getElementsByClassName("close")[0];
+        btn_creation.onclick = function () {
+            modal_creation.style.display = "block";
+        }
+        span.onclick = function () {
+            modal_creation.style.display = "none";
+        }
+        window.onclick = function(event){
+            if (event.target == modal_creation) {
+                modal_creation.style.display = "none";
+            }
+        }
+
+        /* Confirmation de supression */
+        function confirmation(){
+            confirm("Voulez-vous vraiment supprimer cet utilisateur?");
+        }
+
     </script>
 </html>

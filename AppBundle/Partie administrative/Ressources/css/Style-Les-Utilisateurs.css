@@ -1,3 +1,15 @@
+img{
+    border-radius: 50%;
+}
+
+label{
+    color:white;
+}
+
+input{
+    width: 100%;
+}
+
 #liste{
     background-color:#393e46;
     margin-top:20px;
@@ -30,7 +42,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: auto;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -43,6 +55,30 @@
 
 .bleu:hover {
     background-color: #008CBA;
+    color: white;
+}
+
+.bleu_pale{
+    widtt: 10%;
+    background-color: #52bfe3;
+    color: white;
+    border: 2px solid #008CBA;
+}
+
+.bleu_pale:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+.rouge{
+    widtt: 10%;
+    background-color: #bf2222;
+    color: white;
+    border: 2px solid #eb3d3d;
+}
+
+.rouge:hover{
+    background-color: #ed0000;
     color: white;
 }
 
@@ -64,16 +100,16 @@
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #393e46;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 30%;
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: #bfb8b8;
     float: right;
     font-size: 28px;
     font-weight: bold;
