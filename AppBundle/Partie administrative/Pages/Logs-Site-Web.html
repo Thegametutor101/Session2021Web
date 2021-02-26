@@ -193,6 +193,9 @@
                                             </thead>
                                             <tbody>
 
+                                                <div id="liste-logs">
+                                                </div>
+
                                                 <!-- Chaque Nouvelle entrée -->
                                                 <tr>
                                                     <th scope="row">1</th>
@@ -424,6 +427,25 @@
             $("#mail_envoye").prop("disabled", true);
             $("#bouton_inscription").prop("disabled", true);
             $("#type_rien").prop("checked", true);
+        }
+
+        let nbrLogs = 0;
+
+        function ajout(action, date, photo, personne){
+            nbrLogs++;
+            let template =
+                "<tr>\n" +
+                "     <th scope=\"row\>" + nbrLogs + "</th>\n" +
+                "             <td width=\"50%;\>" + action + "</td>\n" +
+                "             <td>" + date + "</td>\n" +
+                "             <td>\n" +
+                "             <div class=\"team\">\n" +
+                " icit mindfuck            <img src=" + photo + " class=\"rounded-circle avatar-xs"\ alt="\ title=\" + personne + \"/>\n" +
+                "             " + personne + "\n" +
+                "         </div>\n" +
+                "     </td>\n" +
+                "</tr>";
+            $("#liste_suivi").append(template);
         }
 
     </script>

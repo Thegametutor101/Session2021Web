@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Les Utilisateurs</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../Ressources/css/Style-Les-Utilisateurs.css">
         <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
     </head>
@@ -31,12 +33,106 @@
         <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
         <div id="main">
 
+            <h1 style="color:white; text-align: center;">Les utilisateurs</h1>
+
+            <button id="creation_utilisateur" class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
+
+
+            <div id="liste" style="margin-bottom: 5%;">
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive project-list">
+                                        <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
+
+
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Nom d'utilisateur</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Modifier?</th>
+                                                <th scope="col">Supprimer?</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            <div id="liste-logs">
+                                            </div>
+
+                                            <!-- Chaque Nouvelle entrée -->
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td width="50%;">François Jacob</td>
+                                                <td>
+                                                    <img src="../Ressources/images/ma-photo.jpg" class="rounded-circle avatar-xs" alt="" title="Antoine St-Arnaud"/>
+                                                </td>
+                                                <td>
+                                                    <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="Modification"/>
+                                                </td>
+                                                <td>
+                                                    <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="Supression" onclick="confirmation()"/>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end project-list -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+
+            </div>
+
+            <!--Modal de création d'utilisateur-->
+            <div id="modal_creation" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div style="margin:auto; width: 60%; padding: 10px;">
+                        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="text-align: center; color:white;">Création d'utilisateur</h4>
+                                <img src="../Ressources/images/inconnu.jpg" style="width: 100%;">
+                                <button id="bouton_ajout_image_creation" class="button bleu_pale" style="margin-left: 20%; margin-top: 1%;">Nouvel utilisateur</button>
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <label for="prenom_creation">Prénom</label>
+                                <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
+                                <label for="nom_creation" style="margin-top: 1%;">Nom</label>
+                                <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
     </body>
 
 
     <script>
-
         /* Fait fermer la fenêtre */
         function closeWin() {
             window.top.close();
@@ -53,5 +149,27 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+
+        /* Pour les modals */
+        var modal_creation = document.getElementById("modal_creation");
+        var btn_creation = document.getElementById("creation_utilisateur");
+        var span = document.getElementsByClassName("close")[0];
+        btn_creation.onclick = function () {
+            modal_creation.style.display = "block";
+        }
+        span.onclick = function () {
+            modal_creation.style.display = "none";
+        }
+        window.onclick = function(event){
+            if (event.target == modal_creation) {
+                modal_creation.style.display = "none";
+            }
+        }
+
+        /* Confirmation de supression */
+        function confirmation(){
+            confirm("Voulez-vous vraiment supprimer cet utilisateur?");
+        }
+
     </script>
 </html>
