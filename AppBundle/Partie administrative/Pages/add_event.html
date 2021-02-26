@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset = "UTF-8">
 	<meta content = "width=device-width, initial-scale=1.0" name = "viewport">
 	<title>Ajout d'événement</title>
-
-	<link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel = "stylesheet">
-	<link crossorigin = "anonymous" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-			integrity = "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-			rel = "stylesheet">
-	<link href = "../Ressources/css/Style-Les_Evenements.css" rel = "stylesheet">
-	<link href = "../Ressources/css/Style-Partie-Administrative.css" rel = "stylesheet">
-	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script crossorigin = "anonymous" src = "https://kit.fontawesome.com/86aa9796b2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		  crossorigin="anonymous">
+	<!-- STYLESHEET -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
+	<link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+	<link rel="stylesheet" href="../Ressources/css/main.css">
+	<!-- SCRIPT jquery et fontawesome -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+	<script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+	<script src="../Ressources/javascript/account.js"></script>
 </head>
-
 <body>
 <!-- Le slide menu à gauche -->
-<div class = "sidenav" id = "mySidenav">
-	<a class = "closebtn" href = "javascript:void(0)" onclick = "closeNav()">&times;</a>
-	<a href = "Accueil-Administratif.html">Accueil Administratif</a>
-	<a href = "Les-Utilisateurs.html">Utilisateurs</a>
-	<a href = "Les-Actualites.html">Actualités</a>
-	<a href = "Les-Evenements.html">Évènements</a>
-	<a href = "Les-Liens.html">Liens</a>
-	<a href = "Le-Contact.html" id = "Page-Selectionne">event</a>
-	<a href = "Les-Temoignages.html">Témoignages</a>
-	<a href = "Presentation-Programme.html">Présentation du Programme</a>
-	<a href = "Video-Accueil.html">Vidéo d'Accueil</a>
-	<a href = "Logs-Site-Web.html">Logs du Site Web</a>
-	<a href = "Deconnexion.html" id = "deconnexion" onclick = "closeWin()" target = "_blank">Déconnexion</a>
-</div>
-
+<div class = "sidenav" id = "mySidenav"></div>
 <img onclick = "openNav()" src = "../Ressources/images/Logo_Slide_Menu.png">-
-
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
 <div id = "main">
 	<h2>Ajouter</h2>
@@ -50,7 +47,6 @@
 									<stop offset = "0%" stop-color = "rgb(255,255,255)" stop-opacity = "1"></stop>
 									<stop offset = "100%" stop-color = "rgb(0,54,207)" stop-opacity = "0"></stop>
 								</linearGradient>
-
 							</defs>
 							<path d = "M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"
 									fill = "rgb(72, 155, 248)" fill-rule = "evenodd"
@@ -60,7 +56,6 @@
 						</svg>
 					</figure>
 				</div>
-
 				<div class = "col-lg-7 event-form__wrapper p-5 order-lg-1">
 					<form class = "event-form form-validate" id = "event-form" novalidate = "novalidate">
 						<div class = "row">
@@ -112,30 +107,36 @@
 											type = "number">
 								</div>
 							</div>
-
-
 							<div class = "col-sm-12 mb-2">
 								<button class = "btn btn-primary" id = "bt-ajouter" name = "submit"
 										type = "submit">Ajouter
 								</button>
 							</div>
-
 						</div>
 					</form>
 				</div>
 				<!-- End event Form Wrapper -->
-
 			</div>
 		</div>
 	</div>
 </div>
 </body>
-
-
 <script>
+	$.ajax("sideNav.html", {
+		success: function (response) {
+			let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+			$("#mySidenav").html(body);
+		}
+	});
+	$("#logOut").click(function (e) {
+		sessionStorage.clear();
+		window.open("Connexion-Administratif.html", "_self");
+	});
+	/* Permet d'ouvrir le slide menu de gauche */
+	function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+	/* Permet de fermer le slide menu de gauche */
+	function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
     $(document).ready(function () {
-
-
         $('#bt-ajouter').click(function (e) {
             e.preventDefault()
             $.ajax({
@@ -160,21 +161,5 @@
             });
         });
     });
-    /* Fait fermer la fenêtre */
-    function closeWin() {
-        window.top.close();
-    }
-
-    /* Permet d'ouvrir le slide menu de gauche */
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "400px";
-        document.getElementById("main").style.marginLeft = "400px";
-    }
-
-    /* Permet de fermer le slide menu de gauche */
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
 </script>
 </html>

@@ -11,5 +11,6 @@
     <orderEntry type="library" name="twitter-bootstrap" level="application" />
     <orderEntry type="library" name="dataTables.bootstrap4" level="application" />
     <orderEntry type="library" name="w3" level="application" />
+    <orderEntry type="library" name="dataTables.buttons" level="application" />
   </component>
 </module>

@@ -1,11 +1,11 @@
-function login(email, password) {
+function login(id, password) {
     let messages = $(".messages");
     messages.empty();
     $.ajax({
-        url:"../../management/login.php",
+        url:"../../Management/login.php",
         type:"POST",
         data: {
-            'email': email,
+            'id': id,
             'password': password
         },
         dataType:"json",
@@ -13,17 +13,14 @@ function login(email, password) {
             let answer = result["item"];
             if (answer === "password") {
                 messages.append("<div>Votre mot de passe est invalide.</div><br><hr>");
-            } else if (answer === "email") {
-                messages.append("<div>Votre courriel est invalide.</div><br><hr>");
+            } else if (answer === "id") {
+                messages.append("<div>Votre identifiant est invalide.</div><br><hr>");
             } else if (answer === "empty") {
                 messages.append("<div>Veuillez remplir les champs.</div><br><hr>");
             } else if (typeof answer[0] !== 'undefined') {
-                sessionStorage.setItem("emailAccount", answer["Email"]);
-                sessionStorage.setItem("phoneAccount", answer["Phone"]);
-                sessionStorage.setItem("screenNameAccount", answer["ScreenName"]);
-                sessionStorage.setItem("passwordAccount", answer["Password"]);
-                sessionStorage.setItem("adminAccount", answer["Admin"]);
-                window.open("../index.html", "_self");
+                sessionStorage.setItem("ID", answer["username"]);
+                sessionStorage.setItem("password", answer["password"]);
+                window.open("Accueil-Administratif.html", "_self");
             } else {
                 messages.append("<div>Erreur lors de votre requête. " +
                     "Veuillez réessayer plus tard.</div><br><hr>");
@@ -36,11 +33,11 @@ function login(email, password) {
         }
     });
 }
-function signup(email, password, phone, screenName) {
+function createAccount(id, password) {
     let messages = $(".messages");
     messages.empty();
     $.ajax({
-        url:"../../management/signup.php",
+        url:"../../management/createAccount.php",
         type:"POST",
         data: {
             'email': email,

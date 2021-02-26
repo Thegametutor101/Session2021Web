@@ -54,4 +54,28 @@ class EntityAccounts
             return $item;
         }
     }
+
+    /**
+     * Fetch specified account
+     *
+     * @param String $username
+     * @return bool
+     */
+    public function checkUserExists(string $username): bool
+    {
+        try {
+            $request = "SELECT COUNT(Password) as found FROM accounts WHERE username = '$username'";
+            $result = $this->connection->query($request);
+            $item = $result->fetch();
+
+            if ($item['found'] > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
 }

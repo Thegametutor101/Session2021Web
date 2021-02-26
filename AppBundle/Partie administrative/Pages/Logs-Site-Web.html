@@ -1,452 +1,389 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Les Logs du Site Web</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../Ressources/css/Style-Logs-Site-Web.css">
-        <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
-    </head>
-
-    <body>
-        <!-- Le slide menu à gauche -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="Accueil-Administratif.html">Accueil Administratif</a>
-            <a href="Les-Utilisateurs.html">Utilisateurs</a>
-            <a href="Les-Actualites.html">Actualités</a>
-            <a href="Les-Evenements.html">Évènements</a>
-            <a href="Les-Liens.html">Liens</a>
-            <a href="Le-Contact.html">Contact</a>
-            <a href="Les-Temoignages.html">Témoignages</a>
-            <a href="Presentation-Programme.html">Présentation du programme</a>
-            <a href="Video-Accueil.html">Vidéo d'accueil</a>
-            <a href="Logs-Site-Web.html" id="Page-Selectionne">Logs du Site Web</a>
-            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
-        </div>
-
-        <!-- Le bouton pour accéder au menu-->
-        <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
-
-        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
-        <div id="main">
-
-            <div class="container"style="background-color: #616f80; border: 10px solid #5d636b; padding: 1%; color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 50%;">
-                <h3 style="color:white; text-align: center; margin-bottom: 1%;">Sélection des logs</h3>
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5"style="display: flex; justify-content: space-between; flex-direction: column;">
-
-                        <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <p>L'ordre d'apparition</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Logs du Site Web</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Logs-Site-Web.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/account.js"></script>
+</head>
+<body>
+<!-- Le slide menu à gauche -->
+<div id="mySidenav" class="sidenav"></div>
+<!-- Le bouton pour accéder au menu-->
+<img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
+<!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+<div id="main">
+    <div class="container"style="background-color: #616f80; border: 10px solid #5d636b; padding: 1%; color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 50%;">
+        <h3 style="color:white; text-align: center; margin-bottom: 1%;">Sélection des logs</h3>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5"style="display: flex; justify-content: space-between; flex-direction: column;">
+                <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <p>L'ordre d'apparition</p>
+                    <label>
+                        <input type="radio" name="ordre" id="ascendant" value="Croissant" checked>
+                        Croissant
+                    </label><br>
+                    <label>
+                        <input type="radio" name="ordre" id="descendant" value="Décroissant">
+                        Décroissant
+                    </label>
+                </div>
+                <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <p>Infos supplémentaires</p>
+                    <label>
+                        <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" checked>
+                        Rien
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="connexions" value="Connexions">
+                        Connexions
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="deconnexions" value="Déconnexions">
+                        Déconnexions
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="modif_video_accueil" value="Modification de la vidéo d'accueil">
+                        Modification de la vidéo d'accueil
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="modif_presentation_programme" value="Modification de la présentation du programme">
+                        Modification de la présentation du programme
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="mail_envoye" value="Mails envoyés">
+                        Mails envoyés
+                    </label><br>
+                    <label>
+                        <input type="radio" name="infos_supp" id="bouton_inscription" value="Appuie du bouton 's'inscrire'">
+                        Appuie du bouton "S'inscrire"
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3" style="background-color: #393e46; padding: 1%;">
+                    <div style="background-color: #5d636b; margin-bottom: 2%; display: flex; justify-content: center">
+                        <div>
+                            <p>Sujet</p>
                             <label>
-                                <input type="radio" name="ordre" id="ascendant" value="Croissant" checked>
-                                Croissant
-                            </label><br>
-                            <label>
-                                <input type="radio" name="ordre" id="descendant" value="Décroissant">
-                                Décroissant
-                            </label>
-                        </div>
-
-                        <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                            <p>Infos supplémentaires</p>
-                            <label>
-                                <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" checked>
+                                <input type="radio" name="sujet" id="sujet_rien" value="Rien" style="text-align: center" checked>
                                 Rien
                             </label><br>
                             <label>
-                                <input type="radio" name="infos_supp" id="connexions" value="Connexions">
-                                Connexions
+                                <input type="radio" name="sujet" id="temoignage" value="Témoignages" style="text-align: center">
+                                Témoignages
                             </label><br>
-
                             <label>
-                                <input type="radio" name="infos_supp" id="deconnexions" value="Déconnexions">
-                                Déconnexions
+                                <input type="radio" name="sujet" id="contact" value="Contacts">
+                                Contacts
                             </label><br>
-
                             <label>
-                                <input type="radio" name="infos_supp" id="modif_video_accueil" value="Modification de la vidéo d'accueil">
-                                Modification de la vidéo d'accueil
+                                <input type="radio" name="sujet" id="lien" value="Liens">
+                                Liens
                             </label><br>
-
                             <label>
-                                <input type="radio" name="infos_supp" id="modif_presentation_programme" value="Modification de la présentation du programme">
-                                Modification de la présentation du programme
+                                <input type="radio" name="sujet" id="evenement" value="Évènements">
+                                Évènements
                             </label><br>
-
                             <label>
-                                <input type="radio" name="infos_supp" id="mail_envoye" value="Mails envoyés">
-                                Mails envoyés
+                                <input type="radio" name="sujet" id="actualite" value="Actualités">
+                                Actualités
                             </label><br>
-
                             <label>
-                                <input type="radio" name="infos_supp" id="bouton_inscription" value="Appuie du bouton 's'inscrire'">
-                                Appuie du bouton "S'inscrire"
+                                <input type="radio" name="sujet" id="utilisateur" value="Utilisateurs">
+                                Utilisateurs
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3" style="background-color: #393e46; padding: 1%;">
-
-                            <div style="background-color: #5d636b; margin-bottom: 2%; display: flex; justify-content: center">
-                                <div>
-                                    <p>Sujet</p>
-                                    <label>
-                                        <input type="radio" name="sujet" id="sujet_rien" value="Rien" style="text-align: center" checked>
-                                        Rien
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="temoignage" value="Témoignages" style="text-align: center">
-                                        Témoignages
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="contact" value="Contacts">
-                                        Contacts
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="lien" value="Liens">
-                                        Liens
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="evenement" value="Évènements">
-                                        Évènements
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="actualite" value="Actualités">
-                                        Actualités
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="sujet" id="utilisateur" value="Utilisateurs">
-                                        Utilisateurs
-                                    </label>
-                                </div>
-
-                            </div>
-
-                            <div style="background-color: #5d636b; display: flex; justify-content: center;">
-                                <div>
-                                    <p>Type de requête</p>
-                                    <label>
-                                        <input type="radio" name="type_requete" id="type_rien" value="Rien" checked disabled>
-                                        Rien
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="type_requete" id="ajouter" value="Ajouter" disabled>
-                                        Ajouter
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="type_requete" id="modifier" value="Modifier" disabled>
-                                        Modifier
-                                    </label><br>
-
-                                    <label>
-                                        <input type="radio" name="type_requete" id="supprimer" value="Supprimer" disabled>
-                                        Supprimer
-                                    </label>
-                                </div>
-
-                            </div>
-                    </div>
-
-                    <div class="col-md-4"></div>
-
-
-                </div>
-
-
-
-
-            </div>
-
-
-            <div id="liste" style="margin-bottom: 5%;">
-
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="table-responsive project-list">
-                                        <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
-
-
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">Logs</th>
-                                                    <th scope="col">Date d'entrée</th>
-                                                    <th scope="col">Fait par</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                                <div id="liste-logs">
-                                                </div>
-
-                                                <!-- Chaque Nouvelle entrée -->
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td width="50%;">Modification de la page d'accueil</td>
-                                                    <td>21 février 2001</td>
-                                                    <td>
-                                                        <div class="team">
-                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                            François Jacob
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- end project-list -->
-
-
-                                </div>
-                            </div>
+                    <div style="background-color: #5d636b; display: flex; justify-content: center;">
+                        <div>
+                            <p>Type de requête</p>
+                            <label>
+                                <input type="radio" name="type_requete" id="type_rien" value="Rien" checked disabled>
+                                Rien
+                            </label><br>
+                            <label>
+                                <input type="radio" name="type_requete" id="ajouter" value="Ajouter" disabled>
+                                Ajouter
+                            </label><br>
+                            <label>
+                                <input type="radio" name="type_requete" id="modifier" value="Modifier" disabled>
+                                Modifier
+                            </label><br>
+                            <label>
+                                <input type="radio" name="type_requete" id="supprimer" value="Supprimer" disabled>
+                                Supprimer
+                            </label>
                         </div>
                     </div>
-                    <!-- end row -->
-                </div>
-
             </div>
-
+            <div class="col-md-4"></div>
         </div>
+    </div>
+    <div id="liste" style="margin-bottom: 5%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive project-list">
+                                <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Logs</th>
+                                            <th scope="col">Date d'entrée</th>
+                                            <th scope="col">Fait par</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <div id="liste-logs"></div>
+                                        <!-- Chaque Nouvelle entrée -->
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td width="50%;">Modification de la page d'accueil</td>
+                                            <td>21 février 2001</td>
+                                            <td>
+                                                <div class="team">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
+                                                    François Jacob
+                                                </div>
+                                            </td>
+                                        </tr>
 
-        <footer>
-            <div class="footer">
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button type="button" class="btn btn-primary" style="background-color: #616f80" onclick="scrollWin()">Revenir en haut?</button>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end project-list -->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </body>
-
-
-    <script>
-        /* Fait fermer la fenêtre */
-        function closeWin() {
-            window.top.close();
+            <!-- end row -->
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer">
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <button type="button" class="btn btn-primary" style="background-color: #616f80" onclick="scrollWin()">Revenir en haut?</button>
+    </div>
+</footer>
+</body>
+<script>
+    $.ajax("sideNav.html", {
+        success: function (response) {
+            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $("#mySidenav").html(body);
         }
-
-        /* Permet d'ouvrir le slide menu de gauche */
-        function openNav(){
-            document.getElementById("mySidenav").style.width = "400px";
-            document.getElementById("main").style.marginLeft = "400px";
-        }
-
-        /* Permet de fermer le slide menu de gauche */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-        /* Permet de montrer le scrolling jusqu'en haut de la page */
-        function scrollWin() {
-            window.scrollTo(0,0);
-        }
-
-        $(document).ready(function (){
-            /* Partie de gauche */
-            $("#infos_supp_rien").change(function () {
-                enabledGauche();
-            });
-            $("#connexions").change(function () {
-                disabledGauche();
-            });
-            $("#deconnexions").change(function () {
-                disabledGauche();
-            });
-            $("#modif_video_accueil").change(function () {
-                disabledGauche();
-            });
-            $("#modif_presentation_programme").change(function () {
-                disabledGauche();
-            });
-            $("#mail_envoye").change(function () {
-                disabledGauche();
-            });
-            $("#bouton_inscription").change(function () {
-                disabledGauche();
-            });
-
-            /* Partie de droite */
-            $("#sujet_rien").change(function () {
-                disabledDroite();
-            });
-           $("#temoignage").change(function () {
-               enabledDroite();
-           });
-            $("#contact").change(function () {
-                enabledDroite();
-            });
-            $("#lien").change(function () {
-                enabledDroite();
-            });
-            $("#evenement").change(function () {
-                enabledDroite();
-            });
-            $("#actualite").change(function () {
-                enabledDroite();
-            });
-            $("#utilisateur").change(function () {
-                enabledDroite();
-            });
-
+    });
+    $("#logOut").click(function (e) {
+        sessionStorage.clear();
+        window.open("Connexion-Administratif.html", "_self");
+    });
+    /* Permet d'ouvrir le slide menu de gauche */
+    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    /* Permet de fermer le slide menu de gauche */
+    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    /* Permet de montrer le scrolling jusqu'en haut de la page */
+    function scrollWin() {
+        window.scrollTo(0,0);
+    }
+    $(document).ready(function (){
+        /* Partie de gauche */
+        $("#infos_supp_rien").change(function () {
+            enabledGauche();
         });
-
-        function disabledGauche(){
-            $("#sujet_rien").prop("disabled", true);
-            $("#type_rien").prop("disabled", true);
-            $("#temoignage").prop("disabled", true);
-            $("#contact").prop("disabled", true);
-            $("#lien").prop("disabled", true);
-            $("#evenement").prop("disabled", true);
-            $("#actualite").prop("disabled", true);
-            $("#utilisateur").prop("disabled", true);
-        }
-
-        function enabledGauche(){
-            $("#sujet_rien").prop("disabled", false);
-            $("#temoignage").prop("disabled", false);
-            $("#contact").prop("disabled", false);
-            $("#lien").prop("disabled", false);
-            $("#evenement").prop("disabled", false);
-            $("#actualite").prop("disabled", false);
-            $("#utilisateur").prop("disabled", false);
-            $("#sujet_rien").prop("checked", true);
-        }
-
-        function disabledDroite(){
-            $("#type_rien").prop("disabled", true);
-            $("#ajouter").prop("disabled", true);
-            $("#modifier").prop("disabled", true);
-            $("#supprimer").prop("disabled", true);
-            $("#connexions").prop("disabled", false);
-            $("#deconnexions").prop("disabled", false);
-            $("#modif_video_accueil").prop("disabled", false);
-            $("#modif_presentation_programme").prop("disabled", false);
-            $("#mail_envoye").prop("disabled", false);
-            $("#bouton_inscription").prop("disabled", false);
-        }
-
-
-        function enabledDroite(){
-            $("#type_rien").prop("disabled", false);
-            $("#ajouter").prop("disabled", false);
-            $("#modifier").prop("disabled", false);
-            $("#supprimer").prop("disabled", false);
-            $("#connexions").prop("disabled", true);
-            $("#deconnexions").prop("disabled", true);
-            $("#modif_video_accueil").prop("disabled", true);
-            $("#modif_presentation_programme").prop("disabled", true);
-            $("#mail_envoye").prop("disabled", true);
-            $("#bouton_inscription").prop("disabled", true);
-            $("#type_rien").prop("checked", true);
-        }
-
-        let nbrLogs = 0;
-
-        function ajout(action, date, photo, personne){
-            nbrLogs++;
-            let template =
-                "<tr>\n" +
-                "     <th scope=\"row\>" + nbrLogs + "</th>\n" +
-                "             <td width=\"50%;\>" + action + "</td>\n" +
-                "             <td>" + date + "</td>\n" +
-                "             <td>\n" +
-                "             <div class=\"team\">\n" +
-                " icit mindfuck            <img src=" + photo + " class=\"rounded-circle avatar-xs"\ alt="\ title=\" + personne + \"/>\n" +
-                "             " + personne + "\n" +
-                "         </div>\n" +
-                "     </td>\n" +
-                "</tr>";
-            $("#liste_suivi").append(template);
-        }
-
-    </script>
+        $("#connexions").change(function () {
+            disabledGauche();
+        });
+        $("#deconnexions").change(function () {
+            disabledGauche();
+        });
+        $("#modif_video_accueil").change(function () {
+            disabledGauche();
+        });
+        $("#modif_presentation_programme").change(function () {
+            disabledGauche();
+        });
+        $("#mail_envoye").change(function () {
+            disabledGauche();
+        });
+        $("#bouton_inscription").change(function () {
+            disabledGauche();
+        });
+        /* Partie de droite */
+        $("#sujet_rien").change(function () {
+            disabledDroite();
+        });
+        $("#temoignage").change(function () {
+           enabledDroite();
+        });
+        $("#contact").change(function () {
+            enabledDroite();
+        });
+        $("#lien").change(function () {
+            enabledDroite();
+        });
+        $("#evenement").change(function () {
+            enabledDroite();
+        });
+        $("#actualite").change(function () {
+            enabledDroite();
+        });
+        $("#utilisateur").change(function () {
+            enabledDroite();
+        });
+    });
+    function disabledGauche(){
+        $("#sujet_rien").prop("disabled", true);
+        $("#type_rien").prop("disabled", true);
+        $("#temoignage").prop("disabled", true);
+        $("#contact").prop("disabled", true);
+        $("#lien").prop("disabled", true);
+        $("#evenement").prop("disabled", true);
+        $("#actualite").prop("disabled", true);
+        $("#utilisateur").prop("disabled", true);
+    }
+    function enabledGauche(){
+        $("#sujet_rien").prop("disabled", false);
+        $("#temoignage").prop("disabled", false);
+        $("#contact").prop("disabled", false);
+        $("#lien").prop("disabled", false);
+        $("#evenement").prop("disabled", false);
+        $("#actualite").prop("disabled", false);
+        $("#utilisateur").prop("disabled", false);
+        $("#sujet_rien").prop("checked", true);
+    }
+    function disabledDroite(){
+        $("#type_rien").prop("disabled", true);
+        $("#ajouter").prop("disabled", true);
+        $("#modifier").prop("disabled", true);
+        $("#supprimer").prop("disabled", true);
+        $("#connexions").prop("disabled", false);
+        $("#deconnexions").prop("disabled", false);
+        $("#modif_video_accueil").prop("disabled", false);
+        $("#modif_presentation_programme").prop("disabled", false);
+        $("#mail_envoye").prop("disabled", false);
+        $("#bouton_inscription").prop("disabled", false);
+    }
+    function enabledDroite(){
+        $("#type_rien").prop("disabled", false);
+        $("#ajouter").prop("disabled", false);
+        $("#modifier").prop("disabled", false);
+        $("#supprimer").prop("disabled", false);
+        $("#connexions").prop("disabled", true);
+        $("#deconnexions").prop("disabled", true);
+        $("#modif_video_accueil").prop("disabled", true);
+        $("#modif_presentation_programme").prop("disabled", true);
+        $("#mail_envoye").prop("disabled", true);
+        $("#bouton_inscription").prop("disabled", true);
+        $("#type_rien").prop("checked", true);
+    }
+    let nbrLogs = 0;
+    function ajout(action, date, photo, personne){
+        nbrLogs++;
+        let template =
+            "<tr>\n" +
+            "     <th scope=\"row\>" + nbrLogs + "</th>\n" +
+            "             <td width=\"50%;\>" + action + "</td>\n" +
+            "             <td>" + date + "</td>\n" +
+            "             <td>\n" +
+            "             <div class=\"team\">\n" +
+            " icit mindfuck            <img src=" + photo + " class=\"rounded-circle avatar-xs"\ alt="\ title=\" + personne + \"/>\n" +
+            "             " + personne + "\n" +
+            "         </div>\n" +
+            "     </td>\n" +
+            "</tr>";
+        $("#liste_suivi").append(template);
+    }
+</script>
 </html>

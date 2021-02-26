@@ -1,206 +1,201 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil Administratif</title>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="../Ressources/css/Style-Accueil-Administratif.css">
-        <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
-    </head>
-
-    <body>
-
-        <!-- Le slide menu à gauche -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="Accueil-Administratif.html" id="Page-Selectionne">Accueil Administratif</a>
-            <a href="Les-Utilisateurs.html">Utilisateurs</a>
-            <a href="Les-Actualites.html">Actualités</a>
-            <a href="Les-Evenements.html">Évènements</a>
-            <a href="Les-Liens.html">Liens</a>
-            <a href="Le-Contact.html">Contact</a>
-            <a href="Les-Temoignages.html">Témoignages</a>
-            <a href="Presentation-Programme.html">Présentation du Programme</a>
-            <a href="Video-Accueil.html">Vidéo d'Accueil</a>
-            <a href="Logs-Site-Web.html">Logs du Site Web</a>
-            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
-        </div>
-
-        <!-- Le bouton pour accéder au menu -->
-        <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
-
-        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
-        <div id="main">
-            <h2>Menu principal administratif</h2>
-            <p>C'est ici que vous allez pouvoir ajouter, modifier ou supprimer toutes les informations que vous désirez du site web.</p>
-            <section class="section services-section" id="services">
-                <div class="container">
-                    <div class="row">
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Les-Utilisateurs.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-user"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Utilisateurs</h5>
-                                        <p class="alignement">Gestion des utilisateurs</p>
-                                    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil Administratif</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Accueil-Administratif.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/account.js"></script>
+</head>
+<body>
+    <!-- Le slide menu à gauche -->
+    <div id="mySidenav" class="sidenav"></div>
+    <!-- Le bouton pour accéder au menu -->
+    <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
+    <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+    <div id="main">
+        <h2>Menu principal administratif</h2>
+        <p>C'est ici que vous allez pouvoir ajouter, modifier ou supprimer toutes les informations que vous désirez du site web.</p>
+        <section class="section services-section" id="services">
+            <div class="container">
+                <div class="row">
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Les-Utilisateurs.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-user"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Les-Actualites.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-newspaper-o"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Actualités</h5>
-                                        <p class="alignement">Gestion des actualités</p>
-                                    </div>
+                                <div class="feature-content">
+                                    <h5>Utilisateurs</h5>
+                                    <p class="alignement">Gestion des utilisateurs</p>
                                 </div>
-                            </a>
-                        </div>
-
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Les-Evenements.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Évènements</h5>
-                                        <p class="alignement">Gestion des évènements</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Les-Liens.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Liens</h5>
-                                        <p class="alignement">Gestion des liens</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Le-Contact.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-users"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Contact</h5>
-                                        <p class="alignement">Gestion des contacts</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Les-Temoignages.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-comment"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Témoignages</h5>
-                                        <p class="alignement">Gestion des témoignages</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Presentation-Programme.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-image"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Présentation du Programme</h5>
-                                        <p class="alignement">Gestion des infos du programme</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Video-Accueil.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-file-video-o"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Vidéo d'Accueil</h5>
-                                        <p class="alignement">Gestion de la vidéo à l'accueil.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
-                        <!-- feaure box -->
-                        <div class="col-sm-6 col-lg-4">
-                            <a href="Logs-Site-Web.html">
-                                <div class="feature-box-1">
-                                    <div class="icon">
-                                        <i class="fa fa-cog"></i>
-                                    </div>
-                                    <div class="feature-content">
-                                        <h5>Logs du site web</h5>
-                                        <p class="alignement">Consulter les logs</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- / -->
+                            </div>
+                        </a>
                     </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Les-Actualites.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-newspaper-o"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Actualités</h5>
+                                    <p class="alignement">Gestion des actualités</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Les-Evenements.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Évènements</h5>
+                                    <p class="alignement">Gestion des évènements</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Les-Liens.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Liens</h5>
+                                    <p class="alignement">Gestion des liens</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Le-Contact.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Contact</h5>
+                                    <p class="alignement">Gestion des contacts</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Les-Temoignages.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-comment"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Témoignages</h5>
+                                    <p class="alignement">Gestion des témoignages</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Presentation-Programme.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-image"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Présentation du Programme</h5>
+                                    <p class="alignement">Gestion des infos du programme</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Video-Accueil.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-file-video-o"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Vidéo d'Accueil</h5>
+                                    <p class="alignement">Gestion de la vidéo à l'accueil.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
+                    <!-- feaure box -->
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="Logs-Site-Web.html">
+                            <div class="feature-box-1">
+                                <div class="icon">
+                                    <i class="fa fa-cog"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Logs du site web</h5>
+                                    <p class="alignement">Consulter les logs</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- / -->
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </div>
-
-    </body>
-
-    <script>
-        /* Fait fermer la fenêtre */
-        function closeWin() {
-            window.top.close();
+    </div>
+</body>
+<script>
+    $.ajax("sideNav.html", {
+        success: function (response) {
+            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $("#mySidenav").html(body);
         }
-
-        /* Permet d'ouvrir le slide menu de gauche */
-        function openNav(){
-            document.getElementById("mySidenav").style.width = "400px";
-            document.getElementById("main").style.marginLeft = "400px";
-        }
-
-        /* Permet de fermer le slide menu de gauche */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-    </script>
+    });
+    $("#logOut").click(function (e) {
+        sessionStorage.clear();
+        window.open("Connexion-Administratif.html", "_self");
+    });
+    /* Permet d'ouvrir le slide menu de gauche */
+    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    /* Permet de fermer le slide menu de gauche */
+    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+</script>
 </html>
