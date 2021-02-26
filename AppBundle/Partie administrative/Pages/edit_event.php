@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Ajout d'événement</title>
+    <title>Moddification d'événement</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -12,10 +12,10 @@
     <link href="../Ressources/css/Style-Partie-Administrative.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/86aa9796b2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
+
 <!-- Le slide menu à gauche -->
 <div class="sidenav" id="mySidenav">
     <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
@@ -36,9 +36,12 @@
 
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
 <div id="main">
+
     <form>
+
         <div class="card mx-auto" style="width: 85%">
-            <h5 class="card-header">Ajout d'événement</h5>
+
+            <h5 class="card-header">Modificaion d'événement</h5>
             <div class="card-body">
                 <div class="mb-4">
                     <label for="Nom">Nom</label>
@@ -49,7 +52,6 @@
                     <input type="text" class="form-control" id="description" placeholder="Description" required>
                 </div>
                 <div class="form-row location mb-4">
-
                     <div class="form-group col-md-2">
                         <label for="inputCity">Ville</label>
                         <input type="text" class="form-control" id="inputCity" placeholder="Ville" required>
@@ -78,13 +80,12 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputSuite">App.</label>
-                        <input type="text" class="form-control" id="inputSuite" placeholder="Appartement">
+                        <input type="text" class="form-control" id="inputSuite" placeholder="Appartement" required>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Code Postal</label>
                         <input type="text" class="form-control" id="inputZip" placeholder="Code Postal" required>
                     </div>
-
                 </div>
 
                 <div class="mb-4">
@@ -100,7 +101,7 @@
                     <label for="maxCapacity">Capacité</label>
                     <input type="number" class="form-control" id="maxCapacity" placeholder="Capacité" min="0" required>
                 </div>
-                <button id="bt-ajouter" type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
             </div>
         </div>
     </form>
@@ -113,10 +114,10 @@
     $(document).ready(function () {
 
 
-        $('#bt-ajouter').click(function (e) {
+        $('#bt-modifier').click(function (e) {
             e.preventDefault()
             $.ajax({
-                url: "../../Management/addEvent.php",
+                url: "../Management/editEvent.php",
                 type: "POST",
                 dataType: "json",
                 data: {
@@ -131,13 +132,14 @@
                     "street": $('#inputStreet').val(),
                     "suite": $('#inputSuite').val(),
                     "zip": $('#inputZip').val(),
+                    "id":   <?php echo  $_POST['val'];?>
                 },
                 success: function (reponse) {
                     let timerInterval
                     Swal.fire({
                         icon: 'success',
                         title: 'Succès',
-                        text: 'L\'événement à été ajouté',
+                        text: 'L\'événement à été modifier',
                         timer: 1500,
                         timerProgressBar: true,
                         didOpen: () => {
