@@ -7,5 +7,15 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3308/session2021web</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="h2021_420626ri_gr01_équipe_6@206.167.140.56" uuid="1244ec66-a889-4610-b424-7a56b2f942e5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://206.167.140.56:3306/h2021_420626ri_gr01_équipe_6</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="America/Montreal" />
+      </driver-properties>
+      <time-zone>America/Montreal</time-zone>
+    </data-source>
   </component>
 </project>
