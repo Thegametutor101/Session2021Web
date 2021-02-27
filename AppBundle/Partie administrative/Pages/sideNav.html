@@ -6,16 +6,23 @@
 </head>
 <body>
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-<a href="Accueil-Administratif.html" id="Page-Selectionne">Accueil Administratif</a>
-<a href="Les-Utilisateurs.html">Utilisateurs</a>
-<a href="Les-Actualites.html">Actualités</a>
-<a href="Les-Evenements.html">Évènements</a>
-<a href="Les-Liens.html">Liens</a>
-<a href="Le-Contact.html">Contact</a>
-<a href="Les-Temoignages.html">Témoignages</a>
-<a href="Presentation-Programme.html">Présentation du Programme</a>
-<a href="Video-Accueil.html">Vidéo d'Accueil</a>
-<a href="Logs-Site-Web.html">Logs du Site Web</a>
+<a href="Accueil-Administratif.html" id="navHome">Accueil Administratif</a>
+<a href="Les-Utilisateurs.html" id="navUsers">Utilisateurs</a>
+<a href="Les-Activités.html" id="navActivities">Activités</a>
+<a href="Les-Evenements.html" id="navEvents">Évènements</a>
+<a href="Les-Liens.html" id="navLinks">Liens</a>
+<a href="Le-Contact.html" id="navContact">Contact</a>
+<a href="Les-Temoignages.html" id="navReview">Témoignages</a>
+<a href="Presentation-Programme.html" id="navProgram">Présentation du Programme</a>
+<a href="Video-Accueil.html" id="navVideo">Vidéo d'Accueil</a>
+<a href="Logs-Site-Web.html" id="navLogs">Logs du Site Web</a>
 <a href="#" id="logOut">Déconnexion</a>
+<script>
+    $("#logOut").click(function (e) {
+        console.log("ok");
+        sessionStorage.clear();
+        window.open("Connexion-Administratif.html", "_self");
+    });
+</script>
 </body>
 </html>

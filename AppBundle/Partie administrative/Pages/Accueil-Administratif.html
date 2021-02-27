@@ -25,6 +25,7 @@
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
     <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <script src="../Ressources/javascript/account.js"></script>
+    <script src="../Ressources/javascript/main.js"></script>
 </head>
 <body>
     <!-- Le slide menu à gauche -->
@@ -55,19 +56,18 @@
                     <!-- / -->
                     <!-- feaure box -->
                     <div class="col-sm-6 col-lg-4">
-                        <a href="Les-Actualites.html">
+                        <a href="Les-Activités.html">
                             <div class="feature-box-1">
                                 <div class="icon">
                                     <i class="fa fa-newspaper-o"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h5>Actualités</h5>
-                                    <p class="alignement">Gestion des actualités</p>
+                                    <h5>Activités</h5>
+                                    <p class="alignement">Gestion des activités</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
                     <!-- / -->
                     <!-- feaure box -->
                     <div class="col-sm-6 col-lg-4">
@@ -83,8 +83,6 @@
                             </div>
                         </a>
                     </div>
-
-
                     <!-- / -->
                     <!-- feaure box -->
                     <div class="col-sm-6 col-lg-4">
@@ -179,19 +177,16 @@
                 </div>
             </div>
         </section>
-
     </div>
 </body>
 <script>
+    checkConnection();
     $.ajax("sideNav.html", {
         success: function (response) {
             let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
             $("#mySidenav").html(body);
+            $("#navHome").addClass("selectedPage");
         }
-    });
-    $("#logOut").click(function (e) {
-        sessionStorage.clear();
-        window.open("Connexion-Administratif.html", "_self");
     });
     /* Permet d'ouvrir le slide menu de gauche */
     function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }

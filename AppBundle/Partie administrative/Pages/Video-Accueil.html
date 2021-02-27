@@ -26,6 +26,7 @@
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
     <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <script src="../Ressources/javascript/account.js"></script>
+    <script src="../Ressources/javascript/main.js"></script>
 </head>
 <body>
 <header>
@@ -53,15 +54,13 @@
 </div>
 </body>
 <script>
+    checkConnection();
     $.ajax("sideNav.html", {
         success: function (response) {
             let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
             $("#mySidenav").html(body);
+            $("#navVideo").addClass("selectedPage");
         }
-    });
-    $("#logOut").click(function (e) {
-        sessionStorage.clear();
-        window.open("Connexion-Administratif.html", "_self");
     });
     /* Permet d'ouvrir le slide menu de gauche */
     function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }

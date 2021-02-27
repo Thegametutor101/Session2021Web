@@ -16,6 +16,9 @@
 		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 		  crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          rel="stylesheet">
 	<!-- STYLESHEET -->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
@@ -24,12 +27,12 @@
 	<!-- SCRIPT jquery et fontawesome -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="../../Ressources/javascript/jquery-dateformat.js"></script>
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          rel="stylesheet">
+    <script src="../Ressources/javascript/main.js"></script>
 </head>
-<body>
+<body style="background-color: #222831">
 <!-- Le slide menu à gauche -->
 <div class = "sidenav" id = "mySidenav"></div>
 <img onclick = "openNav()" src = "../Ressources/images/Logo_Slide_Menu.png">-
@@ -37,7 +40,7 @@
 <div id="main">
     <form>
         <div class="card mx-auto" style="width: 85%">
-            <h5 class="card-header">Ajout d'événement</h5>
+            <h5 class="card-header">Ajout d'activité</h5>
             <div class="card-body">
                 <div class="mb-4">
                     <label for="Nom">Nom</label>
@@ -107,15 +110,13 @@
 </div>
 </body>
 <script>
+    checkConnection();
 	$.ajax("sideNav.html", {
 		success: function (response) {
 			let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
 			$("#mySidenav").html(body);
+            $("#navEvents").addClass("selectedPage");
 		}
-	});
-	$("#logOut").click(function (e) {
-		sessionStorage.clear();
-		window.open("Connexion-Administratif.html", "_self");
 	});
 	/* Permet d'ouvrir le slide menu de gauche */
 	function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Activités</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Les-Activites.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/main.js"></script>
+</head>
+<body>
+<!-- Le slide menu à gauche -->
+<div id="mySidenav" class="sidenav"></div>
+<!-- Le bouton pour accéder au menu-->
+<img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
+<button class='sup btn btn-primary btn-circle-lg align-content-end' id="newActivity">
+    <span>Ajouter</span>
+    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+</button>
+<!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+<div id="main" style="background-color: white">
+    <table id="table" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Lieu</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th>Capacité maximale</th>
+        </tr>
+        </thead>
+        <tbody id="table_body"></tbody>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script>
+    checkConnection();
+    $.ajax("sideNav.html", {
+        success: function (response) {
+            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $("#mySidenav").html(body);
+            $("#navActivities").addClass("selectedPage");
+        }
+    });
+    /* Permet d'ouvrir le slide menu de gauche */
+    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    /* Permet de fermer le slide menu de gauche */
+    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    $(document).ready(function (e) {
+        $.ajax({
+            url: "../../Management/getActivities.php",
+            type: "POST",
+            dataType: "json",
+            success: function (result) {
+                for (i = 0; i < result['item'].length; i++) {
+                    let item = result['item'][i];
+                    $("#table_body").append("<tr>" +
+                        "<td>" + item['name'] + "</td>" +
+                        "<td style='max-width: 400px'>" + item['description'] + "</td>" +
+                        "<td style='max-width: 160px'>" + JSON.parse(item[3])['apartment'] + "-" +
+                                    JSON.parse(item[3])['address'] + " " +
+                                    JSON.parse(item[3])['city'] + ", " +
+                                    JSON.parse(item[3])['province'] + " " +
+                                    JSON.parse(item[3])['postalCode'] + "</td>" +
+                        "<td>" + $.format.date(item[4], "dd MMMM yyyy h:mm a") + "</td>" +
+                        "<td>" + $.format.date(item[5], "dd MMMM yyyy h:mm a") + "</td>" +
+                        "<td style='max-width: 40px'>" + item['maxCapacity'] + "</td>" +
+                        "<td>" +
+                        "<div style='display: flex; justify-content: space-evenly'>" +
+                        "<form  method='get' action='editActivity.html'>" +
+                        "<input hidden name='id'  value='" + item['id'] + "'>" +
+                        "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'>" +
+                        "<i class='fas fa-pencil-alt'></i>" +
+                        "</button>" +
+                        "</form>" +
+                        "<form class='del_form' id='" + item['id'] + "'  method='get'>" +
+                        "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'>" +
+                        "<i class='fas fa-trash'></i>" +
+                        "</button>" +
+                        "</form>" +
+                        "</div>" +
+                        "</td>" +
+                        "</tr>");
+                }
+                table();
+            },
+            error: function (message, error) {
+
+            }
+        });
+        $("#newActivity").click(function (e) {
+            window.open("editActivity.html", "_self");
+        });
+    });
+</script>
+</html>
