@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Moddification d'événement</title>
+    <title>Modification d'événement</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -23,6 +23,7 @@
           type="text/css"
           href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
     <!-- STYLESHEET -->
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
@@ -48,7 +49,7 @@
 
         <div class="card mx-auto" style="width: 85%">
 
-            <h5 class="card-header">Modificaion d'événement</h5>
+            <h5 class="card-header">Modification d'événement</h5>
             <div class="card-body">
                 <div class="mb-4">
                     <label for="Nom">Nom</label>
@@ -108,7 +109,7 @@
                     <label for="maxCapacity">Capacité</label>
                     <input type="number" class="form-control" id="maxCapacity" placeholder="Capacité" min="0" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" id="bt-modifier" class="btn btn-primary">Modifier</button>
             </div>
         </div>
     </form>
@@ -120,12 +121,47 @@
 <script>
     checkConnection();
     $(document).ready(function () {
+        function dateFormat(date){
+            let dateVal = new Date(date);
+            let day = dateVal.getDate().toString().padStart(2, "0");
+            let month = (1 + dateVal.getMonth()).toString().padStart(2, "0");
+            let hour = dateVal.getHours().toString().padStart(2, "0");
+            let minute = dateVal.getMinutes().toString().padStart(2, "0");
+            let sec = dateVal.getSeconds().toString().padStart(2, "0");
+            let ms = dateVal.getMilliseconds().toString().padStart(3, "0");
+            let inputDate = dateVal.getFullYear() + "-" + (month) + "-" + (day) + "T" + (hour) + ":" + (minute) + ":" + (sec) + "." + (ms);
+            return inputDate
+        }
+        $.ajax({
+            url: "../../Management/getEvent.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "id":  <?php echo $_POST['id'];?>
+            },
+            success: function (reponse) {
+                let location = JSON.parse(reponse['location'])
+                $('#nom').val(reponse['name']);
+                $('#description').val(reponse['description']);
+                $('#dateStart').val(dateFormat(reponse['dateStart']));
+                $('#dateEnd').val(dateFormat(reponse['dateStart']));
+                $('#maxCapacity').val(reponse['maxCapacity']);
+                $('#inputCity').val(location[0].city);
+                $('#inputState').val(location[0].province);
+                $('#inputStreet').val(location[0].address);
+                $('#inputSuite').val(location[0].apartment);
+                $('#inputZip').val(location[0].postalCode);
+            },
+            error: function (message, e) {
+                console.log(e)
+            }
 
+        });
 
         $('#bt-modifier').click(function (e) {
             e.preventDefault()
             $.ajax({
-                url: "../Management/editEvent.php",
+                url: "../../Management/editEvent.php",
                 type: "POST",
                 dataType: "json",
                 data: {
@@ -140,7 +176,7 @@
                     "street": $('#inputStreet').val(),
                     "suite": $('#inputSuite').val(),
                     "zip": $('#inputZip').val(),
-                    "id":   <?php echo  $_POST['val'];?>
+                    "id":   <?php echo $_POST['id'];?>
                 },
                 success: function (reponse) {
                     let timerInterval
@@ -182,9 +218,15 @@
             $("#navEvents").addClass("selectedPage");
         }
     });
+
     /* Permet d'ouvrir le slide menu de gauche */
-    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    function openNav() {
+        $("#mySidenav").css("transform", "translateX(0)");
+    }
+
     /* Permet de fermer le slide menu de gauche */
-    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    function closeNav() {
+        $("#mySidenav").css("transform", "translateX(-100%)");
+    }
 </script>
 </html>
