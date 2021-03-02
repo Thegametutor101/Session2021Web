@@ -35,9 +35,8 @@
     <script>
         $(function() {
             let ua = window.navigator.userAgent;
+            //espace volontaire dans le indexOf
             let msie = ua.indexOf("MSIE ");
-            console.log("msie: " + msie);
-            console.log("firefox: " + $.browser.mozilla);
             if ($.browser.mozilla || (msie > 0)) {
                 $("#dateStart").datepicker();
             }
@@ -52,7 +51,7 @@
 <div id="main">
     <form>
         <div class="card mx-auto" style="width: 85%">
-            <h5 class="card-header">Ajout d'événement</h5>
+            <h5 class="card-header">Ajout d'activité</h5>
             <div class="card-body">
                 <div class="mb-4">
                     <label for="Nom">Nom</label>
@@ -111,10 +110,6 @@
                     <label for="maxCapacity">Capacité</label>
                     <input type="number" class="form-control" id="maxCapacity" placeholder="Capacité" min="0" required>
                 </div>
-                <div class="mb-4">
-                    <label for="items">Liste d'objets a apporter (veuillez séparer par une virgule)</label>
-                    <input type="number" class="form-control" id="items" placeholder="Capacité" min="0" required>
-                </div>
                 <button id="bt-ajouter" type="submit" class="btn btn-primary">Ajouter</button>
             </div>
         </div>
@@ -134,5 +129,30 @@
     function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
     /* Permet de fermer le slide menu de gauche */
     function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    if (getUrlParameter("item") !== null) {
+        $.ajax({
+            url: "../../Management/getActivity.php",
+            type: "POST",
+            data: { "id": getUrlParameter("item") },
+            dataType: "json",
+            success: function (result) {
+                let location = JSON.parse(result[3]);
+                $("#nom").val(result[1]);
+                $("#description").val(result[2]);
+                $("#inputCity").val(location['city']);
+                $("#inputState").val(location['province']);
+                $("#inputStreet").val(location['address']);
+                $("#inputSuite").val(location['apartment']);
+                $("#inputZip").val(location['postalCode']);
+                $("#dateStart").val(dateFormat(result[4]));
+                $("#dateEnd").val(dateFormat(result[4]));
+                $("#maxCapacity").val(result[5]);
+            },
+            error: function (message, error) {
+                alert("Erreur de chargement, veuillez r/essayer plus tard.");
+                // window.open("Les-Activités.html", "_self");
+            }
+        });
+    }
 </script>
 </html>

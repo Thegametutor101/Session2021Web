@@ -23,7 +23,7 @@
           type="text/css"
           href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
     <!-- STYLESHEET -->
-    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
@@ -31,8 +31,21 @@
     <!-- SCRIPT jquery et fontawesome -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
     <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
+    <script>
+        $(function() {
+            let ua = window.navigator.userAgent;
+            //espace volontaire dans le indexOf
+            let msie = ua.indexOf("MSIE ");
+            if ($.browser.mozilla || (msie > 0)) {
+                $("#dateStart").datepicker();
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -121,17 +134,6 @@
 <script>
     checkConnection();
     $(document).ready(function () {
-        function dateFormat(date){
-            let dateVal = new Date(date);
-            let day = dateVal.getDate().toString().padStart(2, "0");
-            let month = (1 + dateVal.getMonth()).toString().padStart(2, "0");
-            let hour = dateVal.getHours().toString().padStart(2, "0");
-            let minute = dateVal.getMinutes().toString().padStart(2, "0");
-            let sec = dateVal.getSeconds().toString().padStart(2, "0");
-            let ms = dateVal.getMilliseconds().toString().padStart(3, "0");
-            let inputDate = dateVal.getFullYear() + "-" + (month) + "-" + (day) + "T" + (hour) + ":" + (minute) + ":" + (sec) + "." + (ms);
-            return inputDate
-        }
         $.ajax({
             url: "../../Management/getEvent.php",
             type: "POST",
