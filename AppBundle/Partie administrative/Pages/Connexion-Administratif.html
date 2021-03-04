@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion à l'administration</title>
-    <link rel="stylesheet" href="../Ressources/css/Style-Connexion-Administratif.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Connexion-Administratif.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/account.js"></script>
 </head>
-<body>
+<body onload="checkAccess()">
     <div class="formulaire w3-quarter w3-half w3quarter">
         <div class="logo-container">
             <div class="logo">
@@ -24,12 +37,36 @@
                 <p class="cegep">Cégep de Trois-Rivières</p>
             </div>
         </div>
-        <h3 class="sous-titres">Identifiant</h3>
-        <input type="text" class="textboxes">
-        <h3 class="sous-titres">Mot de passe</h3>
-        <input type="password" class="textboxes">
-        <input type="submit" id="confirmation" value="Se connecter">
+        <div class="messages"></div>
+        <input class="textBoxes" id="ID" type="text" name="ID" placeholder="Identifiant" required>
+        <input class="textBoxes" id="password" type="password" name="password" placeholder="Mot de passe" required>
+        <button class="submitButton">Se connecter</button>
     </div>
     <p id="copyright">©Tout droits réservés - Cégep de Trois-Rivières - 2021</p>
 </body>
+<script src="../Ressources/javascript/account.js"></script>
+<script>
+    function checkAccess() {
+        let value = "0000";
+        while (value !== "9904") {
+            value = prompt("Veuillez entrer le code fournis", "");
+        }
+        $("#ID").focus();
+    }
+    $(".submitButton").click(function (e) {
+        login($("#ID").val(), $("#password").val());
+    });
+    $("#ID").keydown(function(event){
+        let keycode = event.keyCode || event.charCode;
+        if (keycode === 13) {
+            $(".submitButton").click();
+        }
+    });
+    $("#password").keydown(function(event){
+        let keycode = event.keyCode || event.charCode;
+        if (keycode === 13) {
+            $(".submitButton").click();
+        }
+    });
+</script>
 </html>

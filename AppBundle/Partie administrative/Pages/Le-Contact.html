@@ -4,33 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Contact</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Le-Contact.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/account.js"></script>
+    <script src="../Ressources/javascript/main.js"></script>
 </head>
-
 <body>
 <!-- Le slide menu à gauche -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="Accueil-Administratif.html">Accueil Administratif</a>
-    <a href="Les-Utilisateurs.html">Utilisateurs</a>
-    <a href="Les-Actualites.html">Actualités</a>
-    <a href="Les-Evenements.html">Évènements</a>
-    <a href="Les-Liens.html">Liens</a>
-    <a href="Le-Contact.html" id="Page-Selectionne">Contact</a>
-    <a href="Les-Temoignages.html">Témoignages</a>
-    <a href="Presentation-Programme.html">Présentation du Programme</a>
-    <a href="Video-Accueil.html">Vidéo d'Accueil</a>
-    <a href="Logs-Site-Web.html">Logs du Site Web</a>
-    <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
-</div>
-
+<div id="mySidenav" class="sidenav"></div>
 <!-- Le bouton pour accéder au menu-->
 <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
-
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
 <div id="main">
     <h2>Les Contacts</h2>
@@ -108,24 +110,18 @@
 
 </div>
 </body>
-
-
 <script>
-    /* Fait fermer la fenêtre */
-    function closeWin() {
-        window.top.close();
-    }
-
+    checkConnection();
+    $.ajax("sideNav.html", {
+        success: function (response) {
+            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $("#mySidenav").html(body);
+            $("#navContact").addClass("selectedPage");
+        }
+    });
     /* Permet d'ouvrir le slide menu de gauche */
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "400px";
-        document.getElementById("main").style.marginLeft = "400px";
-    }
-
+    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
     /* Permet de fermer le slide menu de gauche */
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
+    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
 </script>
 </html>

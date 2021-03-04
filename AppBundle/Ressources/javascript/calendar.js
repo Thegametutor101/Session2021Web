@@ -8,7 +8,7 @@ $(document).ready(function () {
     $(document).on('click', '.event', function () {
         let id = this.id.split('event_')[1]
         $.ajax({
-            url: "../Ressources/php/bd.php",
+            url: "../Management/getEvent.php",
             type: "POST",
             dataType: "json",
             data: {
@@ -16,6 +16,9 @@ $(document).ready(function () {
                 "id":id
             },
             success: function (reponse) {
+               let location = JSON.parse(reponse['location']);
+               let emplacement = location[0].address + ", " + location[0].city + ", " + location[0].province + " " + location[0].postalCode + " App : " + location[0].apartment;
+
                 Swal.fire({
                     padding: 1,
                     width: '50%',
@@ -24,9 +27,8 @@ $(document).ready(function () {
                         '<li>Description :'+reponse['description']+'</li>' +
                         '<li>Date de début :'+reponse['dateStart']+' </li>' +
                         '<li>Date de fin :'+reponse['dateEnd']+' </li>' +
-                        '<li>Location : '+JSON.stringify(reponse['location']['city']) +'</li>' +
+                        '<li>Addresse : '+emplacement +'</li>' +
                         '<li>Capacité de l\'evenement :'+reponse['maxCapacity']+' </li>' +
-                        '<li>Objet :<ul>' +
                         '</ul> ' +
                         '</li>' +
                         '</ul>',

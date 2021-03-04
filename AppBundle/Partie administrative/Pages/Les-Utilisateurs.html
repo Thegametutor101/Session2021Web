@@ -1,97 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Les Utilisateurs</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../Ressources/css/Style-Les-Utilisateurs.css">
-        <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
-    </head>
-
-    <body>
-        <!-- Le slide menu à gauche -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="Accueil-Administratif.html">Accueil Administratif</a>
-            <a href="Les-Utilisateurs.html" id="Page-Selectionne">Utilisateurs</a>
-            <a href="Les-Actualites.html">Actualités</a>
-            <a href="Les-Evenements.html">Évènements</a>
-            <a href="Les-Liens.html">Liens</a>
-            <a href="Le-Contact.html">Contact</a>
-            <a href="Les-Temoignages.html">Témoignages</a>
-            <a href="Presentation-Programme.html">Présentation du Programme</a>
-            <a href="Video-Accueil.html">Vidéo d'Accueil</a>
-            <a href="Logs-Site-Web.html">Logs du Site Web</a>
-            <a href="Deconnexion.html" target="_blank" onclick="closeWin()" id="deconnexion">Déconnexion</a>
-        </div>
-
-        <!-- Le bouton pour accéder au menu-->
-        <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
-
-        <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
-        <div id="main">
-
-            <h1 style="color:white; text-align: center;">Les utilisateurs</h1>
-
-            <button id="creation_utilisateur" class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
-
-
-            <div id="liste" style="margin-bottom: 5%;">
-
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="table-responsive project-list">
-                                        <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
-
-
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Nom d'utilisateur</th>
-                                                <th scope="col">Photo</th>
-                                                <th scope="col">Modifier?</th>
-                                                <th scope="col">Supprimer?</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            <div id="liste-logs">
-                                            </div>
-
-                                            <!-- Chaque Nouvelle entrée -->
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td width="50%;">François Jacob</td>
-                                                <td>
-                                                    <img src="../Ressources/images/ma-photo.jpg" class="rounded-circle avatar-xs" alt="" title="Antoine St-Arnaud"/>
-                                                </td>
-                                                <td>
-                                                    <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="Modification"/>
-                                                </td>
-                                                <td>
-                                                    <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="Supression" onclick="confirmation()"/>
-                                                </td>
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Utilisateurs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../../Ressources/assets/img/logo-departement-informatique.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Les-Utilisateurs.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
+    <link rel="stylesheet" href="../Ressources/css/main.css">
+    <!-- SCRIPT jquery et fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
+    <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
+    <script src="../Ressources/javascript/account.js"></script>
+    <script src="../Ressources/javascript/main.js"></script>
+</head>
+<body>
+<!-- Le slide menu à gauche -->
+<div id="mySidenav" class="sidenav"></div>
+<!-- Le bouton pour accéder au menu-->
+<img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
+<!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
+<div id="main">
+    <h1 style="color:white; text-align: center;">Les utilisateurs</h1>
+    <button id="creation_utilisateur" class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
+    <div id="liste" style="margin-bottom: 5%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive project-list">
+                                <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nom d'utilisateur</th>
+                                        <th scope="col">Photo</th>
+                                        <th scope="col">Modifier?</th>
+                                        <th scope="col">Supprimer?</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <div id="liste-logs">
                                     </div>
-                                    <!-- end project-list -->
-
-
-                                </div>
+                                    <!-- Chaque Nouvelle entrée -->
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td width="50%;">François Jacob</td>
+                                        <td>
+                                            <img src="../Ressources/images/ma-photo.jpg" class="rounded-circle avatar-xs" alt="" title="Antoine St-Arnaud"/>
+                                        </td>
+                                        <td>
+                                            <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="Modification"/>
+                                        </td>
+                                        <td>
+                                            <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="Supression" onclick="confirmation()"/>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                            <!-- end project-list -->
                         </div>
                     </div>
-                    <!-- end row -->
                 </div>
-
             </div>
 
             <!--Modal de création d'utilisateur-->
@@ -116,60 +102,52 @@
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top: 5%;">
+                        <label for="prenom_creation">Prénom</label>
+                        <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
+                        <label for="nom_creation" style="margin-top: 1%;">Nom</label>
+                        <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
+                    </div>
+                    <div style="margin-top: 5%;">
+                        <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                    </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
-    </body>
-
-
-    <script>
-        /* Fait fermer la fenêtre */
-        function closeWin() {
-            window.top.close();
+    </div>
+</div>
+</body>
+<script>
+    checkConnection();
+    $.ajax("sideNav.html", {
+        success: function (response) {
+            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $("#mySidenav").html(body);
+            $("#navUsers").addClass("selectedPage");
         }
-
-        /* Permet d'ouvrir le slide menu de gauche */
-        function openNav(){
-            document.getElementById("mySidenav").style.width = "400px";
-            document.getElementById("main").style.marginLeft = "400px";
-        }
-
-        /* Permet de fermer le slide menu de gauche */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-        /* Pour les modals */
-        var modal_creation = document.getElementById("modal_creation");
-        var btn_creation = document.getElementById("creation_utilisateur");
-        var span = document.getElementsByClassName("close")[0];
-        btn_creation.onclick = function () {
-            modal_creation.style.display = "block";
-        }
-        span.onclick = function () {
+    });
+    /* Permet d'ouvrir le slide menu de gauche */
+    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    /* Permet de fermer le slide menu de gauche */
+    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    /* Pour les modals */
+    let modal_creation = document.getElementById("modal_creation");
+    let btn_creation = document.getElementById("creation_utilisateur");
+    let span = document.getElementsByClassName("close")[0];
+    btn_creation.onclick = function () {
+        modal_creation.style.display = "block";
+    }
+    span.onclick = function () {
+        modal_creation.style.display = "none";
+    }
+    window.onclick = function(event){
+        if (event.target == modal_creation) {
             modal_creation.style.display = "none";
         }
-        window.onclick = function(event){
-            if (event.target == modal_creation) {
-                modal_creation.style.display = "none";
-            }
-        }
-
-        /* Confirmation de supression */
-        function confirmation(){
-            confirm("Voulez-vous vraiment supprimer cet utilisateur?");
-        }
-
-    </script>
+    }
+    /* Confirmation de supression */
+    function confirmation(){
+        confirm("Voulez-vous vraiment supprimer cet utilisateur?");
+    }
+</script>
 </html>
