@@ -33,4 +33,25 @@ class EntityActivities
             return $items;
         }
     }
+
+    /**
+     * get specified activity by id
+     *
+     * @param int $id
+     * @return array
+     */
+    public function getActivityByID(int $id): array
+    {
+        $items = array();
+        try {
+            $request = "SELECT * FROM activities WHERE id = '$id'";
+            $result = $this->connection->query($request);
+            $items = $result->fetch();
+
+            return $items;
+        }
+        catch(PDOException $e) {
+            return $items;
+        }
+    }
 }

@@ -56,7 +56,7 @@
 .card_info {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 80%;
     padding: 10px 20px;
     color: var(--base);
 }
@@ -86,9 +86,9 @@
     font-size: 30px;
     align-items: center;
 }
-.card_items {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    padding: 5px 10px;
-}
+/*.card_items {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 15%;*/
+/*    padding: 5px 10px;*/
+/*}*/

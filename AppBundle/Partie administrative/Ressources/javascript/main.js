@@ -1,7 +1,32 @@
+let getUrl = window.location;
+let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
+
 function checkConnection() {
     if (sessionStorage.getItem("ID") === null) {
         window.open("Connexion-Administratif.html", "_self");
     }
+}
+let getUrlParameter = function getUrlParameter(sParam) {
+    let sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+function dateFormat(date){
+    let dateVal = new Date(date);
+    let day = dateVal.getDate().toString().padStart(2, "0");
+    let month = (1 + dateVal.getMonth()).toString().padStart(2, "0");
+    let hour = dateVal.getHours().toString().padStart(2, "0");
+    let minute = dateVal.getMinutes().toString().padStart(2, "0");
+    let sec = dateVal.getSeconds().toString().padStart(2, "0");
+    let ms = dateVal.getMilliseconds().toString().padStart(3, "0");
+    return dateVal.getFullYear() + "-" + (month) + "-" + (day) + "T" + (hour) + ":" + (minute) + ":" + (sec) + "." + (ms)
 }
 function table() {
     try {

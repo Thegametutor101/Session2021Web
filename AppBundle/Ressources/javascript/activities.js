@@ -38,8 +38,8 @@ $(document).ready(function () {
                             "</div>" +
                         "</div>" +
                     "</div>" +
-                    "<div class='card_items'><div id='" + list[i][7] + "'></div>" +
-                        itemList(list[i][7]) + "</div>" +
+                    // "<div class='card_items'><div id='" + list[i][7] + "'></div>" +
+                    //     itemList(list[i][7]) + "</div>" +
                 "</div>");
         }
     }
