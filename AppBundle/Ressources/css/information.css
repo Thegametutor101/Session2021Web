@@ -157,7 +157,7 @@
     right: 0;
 }
 .middleSubmit {
-    width: 400px;
+    width: auto;
     margin: 50px auto;
     padding: 20px 40px;
     font-size: 40px;
@@ -167,7 +167,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 400px;
+    height: auto;
 }
 @media screen and (max-width: 800px ) {
     .description {
@@ -195,6 +195,13 @@
     .resume p {
         margin-bottom: 17px;
         font-size: 15px;
+    }
+    .semesterBlock {flex-direction: column;}
+    .number {font-size: 80px}
+    .list {font-size: 16px}
+    .year h3 {padding-right: 0}
+    .middleSubmit {
+        font-size: 20px;
     }
 }
 

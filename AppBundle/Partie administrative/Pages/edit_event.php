@@ -43,6 +43,7 @@
             let msie = ua.indexOf("MSIE ");
             if ($.browser.mozilla || (msie > 0)) {
                 $("#dateStart").datepicker();
+                $("#dateEnd").datepicker();
             }
         });
     </script>
@@ -170,8 +171,8 @@
                     "name": $('#nom').val(),
                     "description": $('#description').val(),
                     "location": $('#location').val(),
-                    "dateStart": $('#dateStart').val(),
-                    "dateEnd": $('#dateEnd').val(),
+                    "dateStart": dateFormat($('#dateStart').val()),
+                    "dateEnd": dateFormat($('#dateEnd').val()),
                     "maxCapacity": $('#maxCapacity').val(),
                     "city": $('#inputCity').val(),
                     "state": $('#inputState').val(),

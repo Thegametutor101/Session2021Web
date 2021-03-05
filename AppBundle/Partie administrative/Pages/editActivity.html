@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Les Activités</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -39,6 +39,7 @@
             let msie = ua.indexOf("MSIE ");
             if ($.browser.mozilla || (msie > 0)) {
                 $("#dateStart").datepicker();
+                $("#dateEnd").datepicker();
             }
         });
     </script>
@@ -51,8 +52,9 @@
 <div id="main">
     <form>
         <div class="card mx-auto" style="width: 85%">
-            <h5 class="card-header">Ajout d'activité</h5>
+            <h5 class="card-header" id="formName">Ajout d'activité</h5>
             <div class="card-body">
+                <div class="mb-4 messages"></div>
                 <div class="mb-4">
                     <label for="Nom">Nom</label>
                     <input type="text" class="form-control" id="nom" placeholder="Nom" required>
@@ -94,7 +96,7 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Code Postal</label>
-                        <input type="text" class="form-control" id="inputZip" placeholder="Code Postal" required>
+                        <input type="text" class="form-control" id="inputZip" placeholder="Code Postal" min="6" max="7" required>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -108,7 +110,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="maxCapacity">Capacité</label>
-                    <input type="number" class="form-control" id="maxCapacity" placeholder="Capacité" min="0" required>
+                    <input type="number" class="form-control" id="maxCapacity" placeholder="Capacité" min="0" max="999999999" required>
                 </div>
                 <button id="bt-ajouter" type="submit" class="btn btn-primary">Ajouter</button>
             </div>
@@ -116,6 +118,7 @@
     </form>
 </div>
 </body>
+<script src="../Ressources/javascript/activities.js"></script>
 <script>
     checkConnection();
     $.ajax("sideNav.html", {
@@ -129,7 +132,9 @@
     function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
     /* Permet de fermer le slide menu de gauche */
     function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
-    if (getUrlParameter("item") !== null) {
+    if (typeof getUrlParameter("item") !== 'undefined') {
+        $("#formName").text("Modification de l'activité");
+        $("#bt-ajouter").text("Soumettre");
         $.ajax({
             url: "../../Management/getActivity.php",
             type: "POST",
@@ -145,14 +150,46 @@
                 $("#inputSuite").val(location['apartment']);
                 $("#inputZip").val(location['postalCode']);
                 $("#dateStart").val(dateFormat(result[4]));
-                $("#dateEnd").val(dateFormat(result[4]));
-                $("#maxCapacity").val(result[5]);
+                $("#dateEnd").val(dateFormat(result[5]));
+                $("#maxCapacity").val(result[6]);
             },
             error: function (message, error) {
-                alert("Erreur de chargement, veuillez r/essayer plus tard.");
-                // window.open("Les-Activités.html", "_self");
+                $(".messages").append("<div>Erreur de chargement, veuillez réessayer plus tard.</div>");
+                window.open("Les-Activités.html", "_self");
             }
         });
     }
+    $("#bt-ajouter").click(function (e) {
+        e.preventDefault();
+        if ($("#inputZip").val().match(/^[a-z]\d[a-z][\s]?\d[a-z]\d$/gi)) {
+            if (typeof getUrlParameter("item") !== 'undefined') {
+                updateActivity(getUrlParameter("item"),
+                    $("#nom").val(),
+                    $("#description").val(),
+                    $("#inputCity").val(),
+                    $("#inputState").val(),
+                    $("#inputStreet").val(),
+                    $("#inputSuite").val(),
+                    $("#inputZip").val(),
+                    dateFormat($("#dateStart").val()),
+                    dateFormat($("#dateEnd").val()),
+                    $("#maxCapacity").val());
+            } else {
+                addActivity($("#nom").val(),
+                    $("#description").val(),
+                    $("#inputCity").val(),
+                    $("#inputState").val(),
+                    $("#inputStreet").val(),
+                    $("#inputSuite").val(),
+                    $("#inputZip").val(),
+                    dateFormat($("#dateStart").val()),
+                    dateFormat($("#dateEnd").val()),
+                    $("#maxCapacity").val());
+            }
+        } else {
+            $(".messages").append("<div>Veuillez entrer un code postal valide sous format A9A 9A9</div>");
+            $("#inputZip").val("");
+        }
+    });
 </script>
 </html>

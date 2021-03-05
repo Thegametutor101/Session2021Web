@@ -101,14 +101,13 @@
                         "<td>" +
                         "<div style='display: flex; justify-content: space-evenly'>" +
                         "<form  method='get' action='editActivity.html'>" +
-                        "<input hidden name='id'  value='" + item['id'] + "'>" +
+                        "<input hidden name='item'  value='" + item['id'] + "'>" +
                         "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'>" +
                         "<i class='fas fa-pencil-alt'></i>" +
                         "</button>" +
                         "</form>" +
                         "<form class='del_form' id='" + item['id'] + "'  method='get'>" +
-                        "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end' " +
-                        "onclick='window.open(\"editActivity.html?item=" + item['id'] + "\", \"_self\");'>" +
+                        "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'>" +
                         "<i class='fas fa-trash'></i>" +
                         "</button>" +
                         "</form>" +
