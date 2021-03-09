@@ -23,7 +23,7 @@ class EntityActivities
     {
         $items = array();
         try {
-            $request = "SELECT * FROM activities";
+            $request = "SELECT * FROM activities ORDER BY dateStart DESC";
             $result = $this->connection->query($request);
             $items = $result->fetchAll();
 
