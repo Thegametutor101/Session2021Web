@@ -79,19 +79,28 @@
                     </div>
                 </div>
             </div>
-            <!-- end row -->
-        </div>
-    </div>
-    <!--Modal de création d'utilisateur-->
-    <div id="modal_creation" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div style="margin:auto; width: 60%; padding: 10px;">
-                <div style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <h4 style="text-align: center; color:white;">Création d'utilisateur</h4>
-                        <img src="../Ressources/images/inconnu.jpg" style="width: 100%;">
-                        <button id="bouton_ajout_image_creation" class="button bleu_pale" style="margin-left: 20%; margin-top: 1%;">Nouvel utilisateur</button>
+
+            <!--Modal de création d'utilisateur-->
+            <div id="modal_creation" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div style="margin:auto; width: 60%; padding: 10px;">
+                        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="text-align: center; color:white;">Création d'utilisateur</h4>
+                                <img src="../Ressources/images/inconnu.jpg" style="width: 100%;">
+                                <button id="bouton_ajout_image_creation" class="button bleu_pale" style="margin-left: 20%; margin-top: 1%;">Ajouter une image</button>
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <label for="prenom_creation">Prénom</label>
+                                <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
+                                <label for="nom_creation" style="margin-top: 1%;">Nom</label>
+                                <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                            </div>
+                        </div>
                     </div>
                     <div style="margin-top: 5%;">
                         <label for="prenom_creation">Prénom</label>

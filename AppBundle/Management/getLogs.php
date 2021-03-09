@@ -1,5 +1,4 @@
 <?php
-require_once ('DB/Model/ModelLogs.php');
-$modelLogs = new ModelLogs();
-echo json_encode($modelLogs->selectAllCroissant());
-?>
+require_once ("DB/Entity/EntityLogs.php");
+$EntityLogs = new EntityLogs();
+echo json_encode($EntityLogs->getLogs());
