@@ -18,30 +18,32 @@ class ModelActivities
      * Insert Item to Activity Table
      * @param string $name
      * @param string $description
-     * @param $location
+//     * @param $location
      * @param $dateStart
-     * @param $dateEnd
-     * @param int $maxCapacity
+//     * @param $dateEnd
+//     * @param int $maxCapacity
      * @return string
      */
     public function addActivity(string $name,
                                 string $description,
-                                $location,
-                                $dateStart,
-                                $dateEnd,
-                                int $maxCapacity): string
+//                                $location,
+                                $dateStart//,
+//                                $dateEnd,
+                                /*int $maxCapacity*/): string
     {
         try {
-            $request = "INSERT INTO activities (name, description, location, dateStart, dateEnd, maxCapacity) 
-                        VALUES(:name, :description, :location, :dateStart, :dateEnd, :maxCapacity)";
+//            $request = "INSERT INTO activities (name, description, location, dateStart, dateEnd, maxCapacity)
+//                        VALUES(:name, :description, :location, :dateStart, :dateEnd, :maxCapacity)";
+            $request = "INSERT INTO activities (name, description, dateStart) 
+                        VALUES(:name, :description, :dateStart)";
 
             $declaration = $this->connection->prepare($request);
             $declaration->bindParam(':name', $name);
             $declaration->bindParam(':description', $description);
-            $declaration->bindParam(':location', $location);
+//            $declaration->bindParam(':location', $location);
             $declaration->bindParam(':dateStart', $dateStart);
-            $declaration->bindParam(':dateEnd', $dateEnd);
-            $declaration->bindParam(':maxCapacity', $maxCapacity);
+//            $declaration->bindParam(':dateEnd', $dateEnd);
+//            $declaration->bindParam(':maxCapacity', $maxCapacity);
 
             $declaration->execute();
 
@@ -57,28 +59,33 @@ class ModelActivities
      * @param int $id
      * @param string $name
      * @param string $description
-     * @param $location
+//     * @param $location
      * @param $dateStart
-     * @param $dateEnd
-     * @param int $maxCapacity
+//     * @param $dateEnd
+//     * @param int $maxCapacity
      * @return string
      */
     public function updateActivity(int $id,
                                    string $name,
                                    string $description,
-                                   $location,
-                                   $dateStart,
+//                                   $location,
+                                   $dateStart/*,
                                    $dateEnd,
-                                   int $maxCapacity): string
+                                   int $maxCapacity*/): string
     {
         try {
+//            $request = "UPDATE activities
+//                        SET name = :name,
+//                            description =  :description,
+//                            location = :location,
+//                            dateStart = :dateStart,
+//                            dateEnd = :dateEnd,
+//                            maxCapacity = :maxCapacity
+//                        WHERE id = '$id'";
             $request = "UPDATE activities
                         SET name = :name, 
                             description =  :description, 
-                            location = :location, 
                             dateStart = :dateStart, 
-                            dateEnd = :dateEnd, 
-                            maxCapacity = :maxCapacity
                         WHERE id = '$id'";
 
             $declaration = $this->connection->prepare($request);

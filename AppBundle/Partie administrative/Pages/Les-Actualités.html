@@ -51,10 +51,10 @@
         <tr>
             <th>Nom</th>
             <th>Description</th>
-            <th>Lieu</th>
-            <th>Début</th>
-            <th>Fin</th>
-            <th>Capacité maximale</th>
+<!--            <th>Lieu</th>-->
+            <th>Date</th>
+<!--            <th>Fin</th>-->
+<!--            <th>Capacité maximale</th>-->
         </tr>
         </thead>
         <tbody id="table_body"></tbody>
@@ -90,17 +90,17 @@
                     $("#table_body").append("<tr>" +
                         "<td>" + item['name'] + "</td>" +
                         "<td style='max-width: 400px'>" + item['description'] + "</td>" +
-                        "<td style='max-width: 160px'>" + JSON.parse(item[3])['apartment'] + "-" +
-                                    JSON.parse(item[3])['address'] + " " +
-                                    JSON.parse(item[3])['city'] + ", " +
-                                    JSON.parse(item[3])['province'] + " " +
-                                    JSON.parse(item[3])['postalCode'] + "</td>" +
+                        // "<td style='max-width: 160px'>" + JSON.parse(item[3])['apartment'] + "-" +
+                        //             JSON.parse(item[3])['address'] + " " +
+                        //             JSON.parse(item[3])['city'] + ", " +
+                        //             JSON.parse(item[3])['province'] + " " +
+                        //             JSON.parse(item[3])['postalCode'] + "</td>" +
                         "<td>" + $.format.date(item[4], "dd MMMM yyyy h:mm a") + "</td>" +
-                        "<td>" + $.format.date(item[5], "dd MMMM yyyy h:mm a") + "</td>" +
-                        "<td style='max-width: 40px'>" + item['maxCapacity'] + "</td>" +
+                        // "<td>" + $.format.date(item[5], "dd MMMM yyyy h:mm a") + "</td>" +
+                        // "<td style='max-width: 40px'>" + item['maxCapacity'] + "</td>" +
                         "<td>" +
                         "<div style='display: flex; justify-content: space-evenly'>" +
-                        "<form  method='get' action='editActivity.html'>" +
+                        "<form  method='get' action='editActualités.html'>" +
                         "<input hidden name='item'  value='" + item['id'] + "'>" +
                         "<button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'>" +
                         "<i class='fas fa-pencil-alt'></i>" +
@@ -122,7 +122,7 @@
             }
         });
         $("#newActivity").click(function (e) {
-            window.open("editActivity.html", "_self");
+            window.open("editActualités.html", "_self");
         });
     });
 </script>
