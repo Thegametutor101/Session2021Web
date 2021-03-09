@@ -33,17 +33,6 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 	<script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
-    <script>
-        $(function() {
-            let ua = window.navigator.userAgent;
-            //espace volontaire dans le indexOf
-            let msie = ua.indexOf("MSIE ");
-            if ($.browser.mozilla || (msie > 0)) {
-                $("#dateStart").datepicker();
-                $("#dateEnd").datepicker();
-            }
-        });
-    </script>
 </head>
 <body style="background-color: #222831">
 <!-- Le slide menu à gauche -->
