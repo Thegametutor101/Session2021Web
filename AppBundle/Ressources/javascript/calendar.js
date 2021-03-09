@@ -32,7 +32,6 @@ $(document).ready(function () {
                         '</ul> ' +
                         '</li>' +
                         '</ul>',
-                    imageUrl: 'https://unsplash.it/400/200',
                     imageWidth: '100%',
                     imageHeight: 200,
                     imageAlt: 'Custom image',

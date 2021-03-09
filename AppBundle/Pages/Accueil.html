@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../Ressources/css/calendar.css">
     <link rel="stylesheet" href="../Ressources/css/header.css">
     <link rel="stylesheet" href="../Ressources/css/footer.css">
+    <link rel="stylesheet" href="../Ressources/css/links.css">
     <!-- SCRIPT jquery et fontawesome -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
@@ -41,18 +42,18 @@
         </div>
     </div>
     <ul class="nav-links">
-        <li><a href="#" id="acceuil">Accueil
+        <li><a href="#" class="acceuil">Accueil
             <div class="bloc"></div>
         </a></li>
-        <li><a href="#" id="events">Évènements
+        <li><a href="#" class="events">Évènements
             <div class="bloc"></div>
         </a></li>
         <li><a href="#" id="activity">Actualitées
             <div class="bloc"></div>
         </a></li>
-<!--        <li><a href="#" id="about">À propos-->
-<!--            <div class="bloc"></div>-->
-<!--        </a></li>-->
+        <li><a href="#" class="link">Liens utiles
+            <div class="bloc"></div>
+        </a></li>
     </ul>
     <div class="burger">
         <div class="bar1"></div>
@@ -77,13 +78,14 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Liens utiles
+                <h4>Redirection
                     <div class="bloc"></div>
                 </h4>
                 <ul>
-                    <li><a href="#">Lien 1</a></li>
-                    <li><a href="#">Lien 2</a></li>
-                    <li><a href="#">Lien 3</a></li>
+                    <li><a href="#" class="acceuil">Accueil</a></li>
+                    <li><a href="#" class="events">Évènements</a></li>
+                    <li><a href="#" class="activity">Activité</a></li>
+                    <li><a href="#" class="link">Liens utiles</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -143,17 +145,20 @@
         });
     }
     $(document).ready(function () {
-        $("#acceuil").click(function () {
-            changePage("informations.html");
-        });
         $(".logo-container").click(function () {
             changePage("informations.html");
         });
-        $("#events").click(function () {
+        $(".acceuil").click(function () {
+            changePage("informations.html");
+        });
+        $(".events").click(function () {
             changePage("evenement.html");
         });
-        $("#activity").click(function () {
+        $(".activity").click(function () {
             changePage("activities.html");
+        });
+        $(".link").click(function () {
+            changePage("link.html");
         });
     });
 </script>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Liens</title>
+    <title>Les liens</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -12,20 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../Ressources/css/Style-Les-Liens.css">
+    <link rel="stylesheet" href="../Ressources/css/Style-Les_Evenements.css">
     <link rel="stylesheet" href="../Ressources/css/Style-Partie-Administrative.css">
     <link rel="stylesheet" href="../Ressources/css/main.css">
     <!-- SCRIPT jquery et fontawesome -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/86aa9796b2.js" crossorigin="anonymous"></script>
     <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
-    <script src="../Ressources/javascript/account.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
 </head>
 <body>
@@ -34,7 +34,24 @@
 <!-- Le bouton pour accéder au menu-->
 <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
-<div id="main">
+
+<div id="main" style="background-color: white">
+    <button class='add btn m-1 btn-primary btn-circle-lg align-content-end' id="newLink">
+        <span>Ajouter</span>
+        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+    </button>
+    <table id="table" class="table table-striped table-bordered" style="width:100%">
+
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Lien</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="table_body"></tbody>
+    </table>
 </div>
 </body>
 <script>
@@ -46,9 +63,122 @@
             $("#navLinks").addClass("selectedPage");
         }
     });
+
     /* Permet d'ouvrir le slide menu de gauche */
-    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    function openNav() {
+        $("#mySidenav").css("transform", "translateX(0)");
+    }
+
     /* Permet de fermer le slide menu de gauche */
-    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    function closeNav() {
+        $("#mySidenav").css("transform", "translateX(-100%)");
+    }
+</script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            url: "../../Management/getLinks.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "requete": "selectEvents",
+            },
+            success: function (reponse) {
+                reponse.forEach(function (item) {
+                    let content = "<tr>";
+                    content += "<td>" + item['name'] + "</td>";
+                    content += "<td>" + item['description'] + "</td>";
+                    content += "<td>" + item['link'] + "</td>";
+                    content += "<td>";
+                    content += "<div style='display: flex; justify-content: space-evenly'>"
+                    content += "<form  method='post' action='edit_link.php'>"
+                    content += "<input hidden name='id'  value='" + item['id'] + "'>"
+                    content += " <button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'><i class='fas fa-pencil-alt'></i></button>"
+                    content += "</form>"
+                    content += "<form class='del_form' id='" + item['id'] + "'  method='post' >"
+                    content += " <button type='submit' class='sup btn btn-primary btn-circle-lg align-content-end'><i class='fas fa-trash'></i></button>"
+                    content += "</form>"
+                    content += " </div>";
+                    content += "</td>";
+                    content += "</tr>";
+                    document.getElementById('table_body').innerHTML += content;
+                });
+                table()
+            },
+            error: function (message, e) {
+
+            }
+
+        });
+
+        $(document).on('click', '.del_form', function (e) {
+            e.preventDefault();
+
+            let id = this.id
+            Swal.fire({
+                title: 'Êtes-vous sûr?',
+                text: "Vous ne pourrez pas revenir en arrière!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Annuler',
+                confirmButtonText: 'Oui, supprimez-le!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "../../Management/deleteEvent.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            "id": id,
+                        },
+                        success: function (reponse) {
+                            let timerInterval
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Succès',
+                                text: 'L\'événement à été ajouté',
+                                timer: 1500,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                    timerInterval = setInterval(() => {
+                                        const content = Swal.getContent()
+                                        if (content) {
+                                            const b = content.querySelector('b')
+                                            if (b) {
+                                                b.textContent = Swal.getTimerLeft()
+                                            }
+                                        }
+                                    }, 100)
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval)
+                                }
+                            }).then((result) => {
+                                location.reload();
+                            })
+                        },
+                        error: function (message, e) {
+
+                        }
+
+                    });
+
+
+                }
+            })
+
+        });
+
+        $("#newLink").click(function (e) {
+            window.open("add_link.html", "_self");
+        });
+    });
 </script>
 </html>

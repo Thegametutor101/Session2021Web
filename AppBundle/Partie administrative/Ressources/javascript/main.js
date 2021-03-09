@@ -31,10 +31,6 @@ function dateFormat(date){
 function table() {
     try {
         $('#table').DataTable({
-            "columnDefs": [{
-                "targets": 6,
-                "orderable": false,
-            },],
             "language": {
                 "emptyTable": "Aucune donnée disponible dans le tableau",
                 "lengthMenu": "Afficher _MENU_ éléments",
