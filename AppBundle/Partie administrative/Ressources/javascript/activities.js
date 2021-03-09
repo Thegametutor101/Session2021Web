@@ -5,8 +5,8 @@ function addActivity(name,
                      // inputStreet,
                      // inputSuite,
                      // inputZip,
-                     dateStart,
-                     /*dateEnd,
+                     dateStart/*,
+                     dateEnd,
                      maxCapacity*/) {
     $.ajax({
        url: "../../Management/addActivity.php",
@@ -21,22 +21,23 @@ function addActivity(name,
            //     "apartment": inputSuite,
            //     "postalCode": inputZip
            // },
-           "dateStart": dateStart,
+           "dateStart": dateStart//,
            // "dateEnd": dateEnd,
            // "maxCapacity": maxCapacity
        },
         dataType: "json",
         success: function (result) {
+            console.log("add no " + result);
             if (result !== "success") {
                 $(".messages").append("<div>Une erreur est survenue lors de l'ajout.<br>" +
                     "Veuillez réessayer plus tard.</div>");
+            } else {
+                window.open("Les-Actualités.html", "_self");
             }
-            window.open("Les-Actualités.html");
         },
         error: function (message, error) {
             $(".messages").append("<div>Une erreur est survenue lors de votre requête.<br>" +
                 "Veuillez réessayer plus tard.</div>");
-            window.open("Les-Actualités.html", "_self");
         }
     });
 }
@@ -48,9 +49,9 @@ function updateActivity(id,
                         // inputStreet,
                         // inputSuite,
                         // inputZip,
-                        dateStart,
-                        // dateEnd,
-                        /*maxCapacity*/) {
+                        dateStart/*,
+                        dateEnd,
+                        maxCapacity*/) {
     $.ajax({
        url: "../../Management/updateActivity.php",
        type: "post",
@@ -65,22 +66,23 @@ function updateActivity(id,
            //     "apartment": inputSuite,
            //     "postalCode": inputZip
            // },
-           "dateStart": dateStart,
+           "dateStart": dateStart//,
            // "dateEnd": dateEnd,
            // "maxCapacity": maxCapacity
        },
         dataType: "json",
         success: function (result) {
+           console.log("update no" + result);
             if (result !== "success") {
                 $(".messages").append("<div>Une erreur est survenue lors de la modification.<br>" +
                     "Veuillez réessayer plus tard.</div>");
+            } else {
+                window.open("Les-Actualités.html", "_self");
             }
-            window.open("Les-Actualités.html");
         },
         error: function (message, error) {
             $(".messages").append("<div>Une erreur est survenue lors de votre requête.<br>" +
                 "Veuillez réessayer plus tard.</div>");
-            window.open("Les-Actualités.html");
         }
     });
 }

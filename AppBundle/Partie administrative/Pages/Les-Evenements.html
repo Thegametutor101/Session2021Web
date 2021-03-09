@@ -153,14 +153,14 @@
                         type: "POST",
                         dataType: "json",
                         data: {
-                            "id": id,
+                            "id": id
                         },
                         success: function (reponse) {
                             let timerInterval
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Succès',
-                                text: 'L\'événement à été ajouté',
+                                text: 'L\'événement à été supprimé',
                                 timer: 1500,
                                 timerProgressBar: true,
                                 didOpen: () => {

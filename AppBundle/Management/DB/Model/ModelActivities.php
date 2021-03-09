@@ -85,23 +85,36 @@ class ModelActivities
             $request = "UPDATE activities
                         SET name = :name, 
                             description =  :description, 
-                            dateStart = :dateStart, 
+                            dateStart = :dateStart
                         WHERE id = '$id'";
 
             $declaration = $this->connection->prepare($request);
             $declaration->bindParam(':name', $name);
             $declaration->bindParam(':description', $description);
-            $declaration->bindParam(':location', $location);
+//            $declaration->bindParam(':location', $location);
             $declaration->bindParam(':dateStart', $dateStart);
-            $declaration->bindParam(':dateEnd', $dateEnd);
-            $declaration->bindParam(':maxCapacity', $maxCapacity);
+//            $declaration->bindParam(':dateEnd', $dateEnd);
+//            $declaration->bindParam(':maxCapacity', $maxCapacity);
 
             $declaration->execute();
 
             return "success";
         }
         catch(PDOException $e) {
-            return "error";
+            return $e;
+        }
+    }
+
+    function removeActivity(int $id): string
+    {
+        try {
+            $request = "DELETE FROM activities WHERE id = '$id'";
+            $declaration = $this->connection->prepare($request);
+            $declaration->execute();
+
+            return "success";
+        } catch (PDOException $e) {
+            return $e;
         }
     }
 }

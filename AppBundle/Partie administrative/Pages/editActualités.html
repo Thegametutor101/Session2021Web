@@ -39,7 +39,7 @@
             let msie = ua.indexOf("MSIE ");
             if ($.browser.mozilla || (msie > 0)) {
                 $("#dateStart").datepicker();
-                $("#dateEnd").datepicker();
+                // $("#dateEnd").datepicker();
             }
         });
     </script>
@@ -155,13 +155,13 @@
             },
             error: function (message, error) {
                 $(".messages").append("<div>Erreur de chargement, veuillez réessayer plus tard.</div>");
-                window.open("Les-Activités.html", "_self");
+                window.open("Les-Actualités.html", "_self");
             }
         });
     }
     $("#bt-ajouter").click(function (e) {
         e.preventDefault();
-        if ($("#inputZip").val().match(/^[a-z]\d[a-z][\s]?\d[a-z]\d$/gi)) {
+        // if ($("#inputZip").val().match(/^[a-z]\d[a-z][\s]?\d[a-z]\d$/gi)) {
             if (typeof getUrlParameter("item") !== 'undefined') {
                 updateActivity(getUrlParameter("item"),
                     $("#nom").val(),
@@ -186,10 +186,10 @@
                     dateFormat($("#dateEnd").val()),
                     $("#maxCapacity").val()*/);
             }
-        } else {
-            $(".messages").append("<div>Veuillez entrer un code postal valide sous format A9A 9A9</div>");
-            $("#inputZip").val("");
-        }
+        // } else {
+        //     $(".messages").append("<div>Veuillez entrer un code postal valide sous format A9A 9A9</div>");
+        //     $("#inputZip").val("");
+        // }
     });
 </script>
 </html>
