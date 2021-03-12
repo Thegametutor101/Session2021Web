@@ -155,7 +155,17 @@
             },
             error: function (message, error) {
                 $(".messages").append("<div>Erreur de chargement, veuillez réessayer plus tard.</div>");
-                window.open("Les-Actualités.html", "_self");
+                $("#nom").disable();
+                $("#description").disable();
+                // $("#inputCity").disable();
+                // $("#inputState").disable();
+                // $("#inputStreet").disable();
+                // $("#inputSuite").disable();
+                // $("#inputZip").disable();
+                $("#dateStart").disable();
+                // $("#dateEnd").disable();
+                // $("#maxCapacity").disable();
+                $("#bt-ajouter").disable();
             }
         });
     }

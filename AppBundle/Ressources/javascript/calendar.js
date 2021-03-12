@@ -13,32 +13,37 @@ $(document).ready(function () {
             dataType: "json",
             data: {
                 "requete": "getEvent",
-                "id":id
+                "id": id
             },
             success: function (reponse) {
-               let location = JSON.parse(reponse['location']);
-               let emplacement = location[0].address + ", " + location[0].city + ", " + location[0].province + " " + location[0].postalCode + " App : " + location[0].apartment;
+                let photo = reponse['photo']
+                let location = JSON.parse(reponse['location']);
+                let emplacement = location[0].address + ", " + location[0].city + ", " + location[0].province + " " + location[0].postalCode + " App : " + location[0].apartment;
+                if(reponse['photo'] == null){
+                    photo = 'not_found.png'
+                }
+                    Swal.fire({
+                        padding: 1,
+                        width: checkSize(),
+                        imageUrl: '../Ressources/images/' + photo,
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        title: reponse['name'],
+                        html: '<ul>' +
+                            '<li>Description :' + reponse['description'] + '</li>' +
+                            '<li>Date de début :' + reponse['dateStart'] + ' </li>' +
+                            '<li>Date de fin :' + reponse['dateEnd'] + ' </li>' +
+                            '<li>Addresse : ' + emplacement + '</li>' +
+                            '<li>Capacité de l\'evenement :' + reponse['maxCapacity'] + ' </li>' +
+                            '</ul> ' +
+                            '</li>' +
+                            '</ul>',
 
-                Swal.fire({
-                    padding: 1,
-                    width: '50%',
-                    title: reponse['name'],
-                    html: '<ul>' +
-                        '<li>Description :'+reponse['description']+'</li>' +
-                        '<li>Date de début :'+reponse['dateStart']+' </li>' +
-                        '<li>Date de fin :'+reponse['dateEnd']+' </li>' +
-                        '<li>Addresse : '+emplacement +'</li>' +
-                        '<li>Capacité de l\'evenement :'+reponse['maxCapacity']+' </li>' +
-                        '</ul> ' +
-                        '</li>' +
-                        '</ul>',
-                    imageWidth: '100%',
-                    imageHeight: 200,
-                    imageAlt: 'Custom image',
-                })
-            },
+                        imageAlt: 'photo',
+                    })
+                    },
             error: function (message, e) {
-               console.log(message);
+                console.log(message);
             }
         });
 
@@ -58,7 +63,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (reponse) {
             reponse.forEach(function (item) {
-                ajout(item['dateStart'], item['name'], item['description'],item['id'])
+                ajout(item['dateStart'], item['name'], item['description'], item['id'])
             })
         },
         error: function (message, e) {
@@ -73,9 +78,9 @@ $(document).ready(function () {
         return monthNames[date.getMonth()]
     }
 
-    function ajout(date, title, desc,id) {
+    function ajout(date, title, desc, id) {
         let d = new Date(date)
-        let content = "<div class='event' id='event_"+id+"'>";
+        let content = "<div class='event' id='event_" + id + "'>";
         content += "<div class='event-left'>";
         content += "<div class='event-date'>";
         content += "<div class='date'>" + d.getDate() + "</div>";
@@ -89,5 +94,12 @@ $(document).ready(function () {
         content += "</div>";
         content += "</div>";
         document.getElementById(d.getFullYear()).innerHTML += content;
+    }
+    function checkSize() {
+        if ($(document).width() <= 550) {
+            return '85%';
+        } else {
+            return '50%';
+        }
     }
 });

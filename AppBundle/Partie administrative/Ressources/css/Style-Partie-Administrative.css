@@ -56,8 +56,8 @@ body {background-color: #222831;}
 div a:active {transform: translateY(4px);}
 
 img {
-    width: 2.5%;
-    height: 2.5%;
+    width: 40px;
+    height: 40px;
 }
 
 h2,p {

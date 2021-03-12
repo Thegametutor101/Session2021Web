@@ -1,0 +1,11 @@
+#newLink {
+    position: absolute;
+    right: 2vh;
+    top: 0;
+    width: auto;
+}
+@media screen and (max-width: 800px ) {
+    .rowButtons {
+        flex-direction: column;
+    }
+}

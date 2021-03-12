@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta content = "width=device-width, initial-scale=1.0" name = "viewport">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Ajout de lien</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -34,7 +34,7 @@
     <script src="../../Ressources/javascript/jquery-dateformat.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
     <script>
-        $(function() {
+        $(function () {
             let ua = window.navigator.userAgent;
             //espace volontaire dans le indexOf
             let msie = ua.indexOf("MSIE ");
@@ -47,8 +47,8 @@
 </head>
 <body style="background-color: #222831">
 <!-- Le slide menu à gauche -->
-<div class = "sidenav" id = "mySidenav"></div>
-<img onclick = "openNav()" src = "../Ressources/images/Logo_Slide_Menu.png">-
+<div class="sidenav" id="mySidenav"></div>
+<img onclick="openNav()" src="../Ressources/images/Logo_Slide_Menu.png">-
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
 <div id="main">
     <form>
@@ -63,11 +63,15 @@
                     <label for="Nom">Description</label>
                     <input type="text" class="form-control" id="description" placeholder="Description" required>
                 </div>
-                <div class="mb-4">
-                    <label for="Nom">Lien</label>
-                    <input type="text" class="form-control" id="link" placeholder="Lien" required>
-                </div>
 
+                <label for="link" class="form-label">Lien</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">https://</div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Lien" id="link">
+                    <button class="btn btn-outline-secondary" type="button" id="test">Tester</button>
+                </div>
                 <button id="bt-ajouter" type="submit" class="btn btn-primary">Ajouter</button>
             </div>
         </div>
@@ -81,14 +85,25 @@
         success: function (response) {
             let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
             $("#mySidenav").html(body);
-            $("#navEvents").addClass("selectedPage");
+            $("#navLinks").addClass("selectedPage");
         }
     });
+
     /* Permet d'ouvrir le slide menu de gauche */
-    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
+    function openNav() {
+        $("#mySidenav").css("transform", "translateX(0)");
+    }
+
     /* Permet de fermer le slide menu de gauche */
-    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
+    function closeNav() {
+        $("#mySidenav").css("transform", "translateX(-100%)");
+    }
+
     $(document).ready(function () {
+        $('#test').click(function () {
+            window.open('https://' + $('#link').val());
+        })
+
         $('#bt-ajouter').click(function (e) {
             e.preventDefault()
             $.ajax({

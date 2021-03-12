@@ -63,3 +63,19 @@
     transform: scale(1.02);
 }
 .submitButton:active {transform: scale(0.98);}
+@media screen and (max-width: 800px ) {
+    .submitButton {
+        margin: 20px 20%;
+        width: 60%;
+    }
+    .textBoxes {
+        width: 80%;
+        margin: 15px 10%;
+        font-size: 14px;
+    }
+    .formulaire {
+        width: 80%;
+        max-width: 80%;
+        margin: 70px 10%;
+    }
+}
