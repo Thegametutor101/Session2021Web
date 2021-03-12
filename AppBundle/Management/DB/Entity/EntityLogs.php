@@ -23,7 +23,7 @@ class EntityLogs
     {
         $items = array();
         try {
-            $request = "SELECT * FROM logs";
+            $request = "SELECT * FROM logs ORDER BY date";
             $result = $this->connection->query($request);
             $items = $result->fetchAll();
 

@@ -28,53 +28,37 @@
     <script src="../Ressources/javascript/account.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
 </head>
-<body>
+<body onload="selectUsers()">
 <!-- Le slide menu à gauche -->
 <div id="mySidenav" class="sidenav"></div>
 <!-- Le bouton pour accéder au menu-->
 <img src="../Ressources/images/Logo_Slide_Menu.png" onclick="openNav()">
 <!-- La div principale qui contient toutes les informations du site web. L'id "main" doit obligatoirement être présent -->
 <div id="main">
-    <h1 style="color:white; text-align: center;">Les utilisateurs</h1>
-    <button id="creation_utilisateur" class="button bleu" style="margin-left: 45%;">Nouvel utilisateur</button>
-    <div id="liste" style="margin-bottom: 5%;">
+    <h1 id="titrePage">Les utilisateurs</h1>
+    <button id="creation_utilisateur" class="button bleu">Nouvel utilisateur</button>
+    <!--Liste où apparaitra tous les utilisateurs de la base de donnée -->
+    <div id="liste">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive project-list">
-                                <table class="table project-table table-centered table-nowrap" style="color:#eeeeee;">
+                                <table class="table project-table table-centered table-nowrap" id="couleurTexteTable">
                                     <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
+                                        <th scope="col">Numéro d'utilisateur</th>
                                         <th scope="col">Nom d'utilisateur</th>
-                                        <th scope="col">Photo</th>
                                         <th scope="col">Modifier?</th>
                                         <th scope="col">Supprimer?</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <div id="liste-logs">
-                                    </div>
-                                    <!-- Chaque Nouvelle entrée -->
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td width="50%;">François Jacob</td>
-                                        <td>
-                                            <img src="../Ressources/images/ma-photo.jpg" class="rounded-circle avatar-xs" alt="" title="Antoine St-Arnaud"/>
-                                        </td>
-                                        <td>
-                                            <img src="../Ressources/images/Modif.jpg" class="rounded-circle avatar-xs" alt="" title="Modification"/>
-                                        </td>
-                                        <td>
-                                            <img src="../Ressources/images/supprimer.png" class="rounded-circle avatar-xs" alt="" title="Supression" onclick="confirmation()"/>
-                                        </td>
-                                    </tr>
+                                    <tbody id="liste-Users">
+                                        <!-- Liste des Utilisateurs de la base de donnéee -->
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- end project-list -->
                         </div>
                     </div>
                 </div>
@@ -84,70 +68,30 @@
             <div id="modal_creation" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <div style="margin:auto; width: 60%; padding: 10px;">
-                        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div id="positionTitreModal">
+                        <div id="flexTitreModal">
                             <div>
-                                <h4 style="text-align: center; color:white;">Création d'utilisateur</h4>
-                                <img src="../Ressources/images/inconnu.jpg" style="width: 100%;">
-                                <button id="bouton_ajout_image_creation" class="button bleu_pale" style="margin-left: 20%; margin-top: 1%;">Ajouter une image</button>
-                            </div>
-                            <div style="margin-top: 5%;">
-                                <label for="prenom_creation">Prénom</label>
-                                <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
-                                <label for="nom_creation" style="margin-top: 1%;">Nom</label>
-                                <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
-                            </div>
-                            <div style="margin-top: 5%;">
-                                <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                                <h4 id="titreCreationUtilisateurModal"></h4>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 5%;">
-                        <label for="prenom_creation">Prénom</label>
-                        <input type="text" id="prenom_creation" placeholder="Veuillez entrez votre prénom">
-                        <label for="nom_creation" style="margin-top: 1%;">Nom</label>
-                        <input type="text" id="nom_creation" placeholder="Veuillez entrez votre nom">
+                    <div class="formulairesEtBouton">
+                        <label for="username_creation_modal">Nom d'utilisateur</label>
+                        <input type="text" id="username_creation_modal" placeholder="Veuillez entrez un nom d'utilisateur" maxlength="100">
+                        <label for="mdp_creation_modal" class="espaceInputs">Mot de passe</label>
+                        <input type="password" id="mdp_creation_modal" placeholder="Veuillez entrez un mot de passe" maxlength="250">
+                        <label for="confirmation_mdp_creation_modal" class="espaceInputs">Confirmation du mot de passe</label>
+                        <input type="password" id="confirmation_mdp_creation_modal" placeholder="Veuillez confirmer votre mot de passe" maxlength="10" maxlength="250">
                     </div>
-                    <div style="margin-top: 5%;">
-                        <button id="bouton_confirmation_creation" class="button rouge" style="margin-left: 30%;">Confirmer</button>
+                    <div class="formulairesEtBouton">
+                        <input type="button" id="bouton_confirmation_creation_modal" class="button rouge" onclick="actionBoutonModal()">
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 </body>
-<script>
-    checkConnection();
-    $.ajax("sideNav.html", {
-        success: function (response) {
-            let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
-            $("#mySidenav").html(body);
-            $("#navUsers").addClass("selectedPage");
-        }
-    });
-    /* Permet d'ouvrir le slide menu de gauche */
-    function openNav(){ $("#mySidenav").css("transform", "translateX(0)"); }
-    /* Permet de fermer le slide menu de gauche */
-    function closeNav() { $("#mySidenav").css("transform", "translateX(-100%)"); }
-    /* Pour les modals */
-    let modal_creation = document.getElementById("modal_creation");
-    let btn_creation = document.getElementById("creation_utilisateur");
-    let span = document.getElementsByClassName("close")[0];
-    btn_creation.onclick = function () {
-        modal_creation.style.display = "block";
-    }
-    span.onclick = function () {
-        modal_creation.style.display = "none";
-    }
-    window.onclick = function(event){
-        if (event.target == modal_creation) {
-            modal_creation.style.display = "none";
-        }
-    }
-    /* Confirmation de supression */
-    function confirmation(){
-        confirm("Voulez-vous vraiment supprimer cet utilisateur?");
-    }
-</script>
+<script src="../Ressources/javascript/Les-Utilisateurs.js"></script>
 </html>

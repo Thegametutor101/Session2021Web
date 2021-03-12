@@ -28,7 +28,7 @@
     <script src="../Ressources/javascript/account.js"></script>
     <script src="../Ressources/javascript/main.js"></script>
 </head>
-<body>
+<body onload="selectLogsLoad()">
 <!-- Le slide menu à gauche -->
 <div id="mySidenav" class="sidenav"></div>
 <!-- Le bouton pour accéder au menu-->
@@ -54,7 +54,7 @@
                 <div style="background-color: #5d636b; border: 10px solid #393e46; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <p>Infos supplémentaires</p>
                     <label>
-                        <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" checked>
+                        <input type="radio" name="infos_supp" id="infos_supp_rien" value="Rien" onchange="selectLogs()" checked>
                         Rien
                     </label><br>
                     <label>
@@ -159,8 +159,8 @@
                                             <th scope="col">Fait par</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <div id="liste-logs"></div>
+                                    <tbody id="liste-logs">
+
                                         <!-- Chaque Nouvelle entrée -->
                                         <tr>
                                             <th scope="row">1</th>
@@ -168,77 +168,11 @@
                                             <td>21 février 2001</td>
                                             <td>
                                                 <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
                                                     François Jacob
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td width="50%;">Modification de la page d'accueil</td>
-                                            <td>21 février 2001</td>
-                                            <td>
-                                                <div class="team">
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle avatar-xs" alt="" title="François Jacob"/>
-                                                    François Jacob
-                                                </div>
-                                            </td>
-                                        </tr>
+
 
                                     </tbody>
                                 </table>
@@ -261,6 +195,39 @@
 </body>
 <script>
     checkConnection();
+
+    function selectLogsLoad(){
+       $(document).ready(function (){
+           $.ajax({
+               url: "../../Management/getLogsCroissant.php",
+               type: "POST",
+               dataType: "json",
+               success: function(response) {
+                   $("#liste-logs").empty();
+                   for (i = 0; i < response['item'].length; i++) {
+                       let item = response['item'][i];
+                       $("#liste-logs").append(
+                           "<tr>" +
+                           "    <th scope=\"row\">1</th>" +
+                           "       <td width=\"50%;\">" + item["action"] + "</td>" +
+                           "       <td>" + item["date"] + "</td>" +
+                           "       <td>" +
+                           "           <div class=\"team\">" +
+                           "               " + item["personne"] +
+                           "           </div>" +
+                           "      </td>" +
+                           "</tr>"
+                       );
+                   }
+               },
+               error: function (message){
+                   console.log(message);
+               }
+           })
+       })
+    };
+
+
     $.ajax("sideNav.html", {
         success: function (response) {
             let body = response.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
@@ -373,11 +340,11 @@
         let template =
             "<tr>\n" +
             "     <th scope=\"row\>" + nbrLogs + "</th>\n" +
-            "             <td width=\"50%;\>" + action + "</td>\n" +
+            "             <td width=\"50%;\>" + action + "</td>" +
             "             <td>" + date + "</td>\n" +
             "             <td>\n" +
             "             <div class=\"team\">\n" +
-            " icit mindfuck            <img src=" + photo + " class=\"rounded-circle avatar-xs"\ alt="\ title=\" + personne + \"/>\n" +
+            "                 <img src=" + photo + " class='rounded-circle avatar-xs' title=' + personne + '/>" +
             "             " + personne + "\n" +
             "         </div>\n" +
             "     </td>\n" +
